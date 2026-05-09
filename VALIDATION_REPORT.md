@@ -109,6 +109,8 @@ Package date: 2026-05-07
   - Cloud VM focused subtree inventory `test_cloud_vm_subtree_inventory1`: PASS.
   - Cloud VM mirrored platform subtree inventory `test_cloud_vm_subtree_inventory2`: PASS.
   - Cloud VM repo status after report cleanup `test_cloud_vm_repo_status3`: PASS and clean.
+  - Cloud VM Terraform validation packet `test_cloud_vm_terraform_validate1`: PASS.
+  - Cloud VM Terraform validation packet `test_cloud_vm_terraform_validate2`: PASS using resolved `~/bin/terraform`.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS

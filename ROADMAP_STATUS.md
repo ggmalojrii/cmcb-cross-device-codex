@@ -14,7 +14,7 @@ Generated: 2026-05-08
 | Local aVM worker | Done | WSL2 Ubuntu 24.04 is bootstrapped, validated, and enrolled in Tailscale as `cmcb-local-avm` / `100.95.38.105`. |
 | Cloud VM worker | Live on Oracle Always Free | Oracle VM is provisioned, bootstrapped, and enrolled in Tailscale as `cmcb-oracle-free-worker` / `100.98.49.26`. |
 | iPhone/iPad control | Ready for review | iDevice plan and mobile handoff page are generated. |
-| End-to-end cross-device validation | In progress | Core worker nodes are live; desktop and laptop file inventory smoke tests now PASS; Oracle repo refresh PASS; Oracle workspace inventory PASS; mirrored platform subtree inventories PASS; Oracle clone is clean after report cleanup; paired storage smoke now PASS; final job-routing coverage remains. |
+| End-to-end cross-device validation | In progress | Core worker nodes are live; desktop and laptop file inventory smoke tests now PASS; Oracle repo refresh PASS; Oracle workspace inventory PASS; mirrored platform subtree inventories PASS; Oracle clone is clean after report cleanup; Oracle Terraform validate PASS; paired storage smoke now PASS; final job-routing coverage remains. |
 
 ## Active services
 
