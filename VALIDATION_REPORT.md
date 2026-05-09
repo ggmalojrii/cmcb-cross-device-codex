@@ -111,6 +111,7 @@ Package date: 2026-05-07
   - Cloud VM repo status after report cleanup `test_cloud_vm_repo_status3`: PASS and clean.
   - Cloud VM Terraform validation packet `test_cloud_vm_terraform_validate1`: PASS.
   - Cloud VM Terraform validation packet `test_cloud_vm_terraform_validate2`: PASS using resolved `~/bin/terraform`.
+  - Cloud VM Terraform fmt-check packet `test_cloud_vm_terraform_fmt_check1`: PASS.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS
