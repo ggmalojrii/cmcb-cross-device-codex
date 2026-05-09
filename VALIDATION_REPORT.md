@@ -1,6 +1,6 @@
 # Validation Report
 
-Generated: 2026-05-08
+Generated: 2026-05-09
 Package date: 2026-05-07
 
 ## Safety
@@ -54,7 +54,8 @@ Package date: 2026-05-07
   - Local handoff server: `http://127.0.0.1:8765`
   - Public URL: `https://salvation-securities-makes-steps.trycloudflare.com`
   - Public `status.json` returned HTTP 200.
-  - Public surface is the sanitized handoff folder only.
+  - Public surface is the sanitized operating handoff folder only.
+  - Public handoff page now reflects the live operating phase and current roadmap snapshot.
 - Laptop public onboarding: PASS
   - `laptop_onboarding.ps1` PowerShell parser validation passed.
   - Public onboarding script returned HTTP 200.
@@ -126,7 +127,7 @@ Package date: 2026-05-07
 - rclone is installed but no remote is configured.
 - Paid cloud provider is not selected, so Terraform apply remains blocked for any paid path.
 - Oracle Always Free template files were added, but no Oracle resources were created or applied.
-- Public handoff tunnel is temporary and should be stopped when external review is done.
+- Public handoff tunnel remains sanitized and should be stopped when external review is done.
 - Codex CLI is installed inside the local aVM, but live Codex work may require interactive Codex/OpenAI authentication.
 - The old package-local `shared\CMCB-Shared` folder remains as fallback. Live services use `V:\CMCB-Central\CMCB-Shared` directly.
 - A partial `shared\CMCB-Shared.pre-v-central-*` backup may exist from the attempted junction swap; it is not the live shared root.

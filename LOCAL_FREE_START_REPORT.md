@@ -34,7 +34,7 @@ Updated: 2026-05-08
 - Created sanitized ChatGPT handoff page under `shared/CMCB-Shared/handoffs/chatgpt-online`.
 - Started local-only handoff server at `http://127.0.0.1:8765`.
 - Installed Cloudflare `cloudflared` through winget.
-- Opened a temporary public tunnel for the handoff page only.
+- Opened a sanitized public tunnel for the handoff page only.
 - Public handoff URL: `https://salvation-securities-makes-steps.trycloudflare.com`.
 - Verified public `status.json`: PASS.
 - Published sanitized laptop bootstrap ZIP at `https://salvation-securities-makes-steps.trycloudflare.com/laptop_node_bootstrap.zip`.
