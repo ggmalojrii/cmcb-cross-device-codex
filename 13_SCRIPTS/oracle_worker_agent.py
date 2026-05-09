@@ -115,33 +115,68 @@ def handle_request(packet_path: Path, node_id: str, shared: Path, repo_dir: Path
             result["result"] = "PASS" if code == 0 else "FAIL"
             result["summary"] = "Repository validation complete."
     elif test_type == "workspace_inventory":
-        top_level = []
-        for entry in sorted(repo_dir.iterdir(), key=lambda p: p.name.lower()):
-            if entry.name == ".git":
+        requested_paths = req.get("inventory_paths") or ["."]
+        inventory = {"repo_dir": str(repo_dir), "paths": []}
+        for raw_path in requested_paths:
+            rel = Path(raw_path)
+            candidate = (repo_dir / rel).resolve()
+            if repo_dir not in candidate.parents and candidate != repo_dir:
+                inventory["paths"].append(
+                    {"path": raw_path, "status": "BLOCKED", "error": "path escapes repository root"}
+                )
                 continue
-            item = {"name": entry.name, "kind": "dir" if entry.is_dir() else "file"}
-            if entry.is_file():
-                try:
-                    item["size_bytes"] = entry.stat().st_size
-                except OSError:
-                    item["size_bytes"] = None
-            top_level.append(item)
+            if not candidate.exists():
+                inventory["paths"].append({"path": raw_path, "status": "MISSING"})
+                continue
 
-        tracked_code, tracked_out = run_cmd(["git", "ls-files"], cwd=repo_dir)
+            if candidate.is_dir():
+                children = []
+                for entry in sorted(candidate.iterdir(), key=lambda p: p.name.lower()):
+                    if entry.name == ".git":
+                        continue
+                    child = {"name": entry.name, "kind": "dir" if entry.is_dir() else "file"}
+                    if entry.is_file():
+                        try:
+                            child["size_bytes"] = entry.stat().st_size
+                        except OSError:
+                            child["size_bytes"] = None
+                    children.append(child)
+                tracked_code, tracked_out = run_cmd(["git", "ls-files", "--", str(rel)], cwd=repo_dir)
+                inventory["paths"].append(
+                    {
+                        "path": raw_path,
+                        "status": "OK",
+                        "kind": "dir",
+                        "children": children,
+                        "tracked_files": tracked_out.splitlines() if tracked_out else [],
+                        "tracked_exit_code": tracked_code,
+                    }
+                )
+            else:
+                try:
+                    size_bytes = candidate.stat().st_size
+                except OSError:
+                    size_bytes = None
+                tracked_code, tracked_out = run_cmd(["git", "ls-files", "--", str(rel)], cwd=repo_dir)
+                inventory["paths"].append(
+                    {
+                        "path": raw_path,
+                        "status": "OK",
+                        "kind": "file",
+                        "size_bytes": size_bytes,
+                        "tracked_files": tracked_out.splitlines() if tracked_out else [],
+                        "tracked_exit_code": tracked_code,
+                    }
+                )
+
         status_code, status_out = run_cmd(["git", "status", "--short"], cwd=repo_dir)
-        inventory = {
-            "repo_dir": str(repo_dir),
-            "top_level": top_level,
-            "tracked_files": tracked_out.splitlines() if tracked_out else [],
-            "git_status": status_out.splitlines() if status_out else [],
-        }
+        inventory["git_status"] = status_out.splitlines() if status_out else []
         inv_path = shared / "logs" / f"{node_id}_{test_id}_workspace_inventory.json"
         write_json(inv_path, inventory)
         result["logs"].append(str(inv_path))
         result["artifacts"].append(str(inv_path))
-        result["result"] = "PASS" if tracked_code == 0 and status_code == 0 else "FAIL"
+        result["result"] = "PASS" if status_code == 0 else "FAIL"
         result["summary"] = "Workspace inventory captured."
-        result["validation"].append({"command": "git ls-files", "exit_code": tracked_code})
         result["validation"].append({"command": "git status --short", "exit_code": status_code})
     elif test_type == "repo_status":
         code, out = run_cmd(["git", "status", "--short"], cwd=repo_dir)
