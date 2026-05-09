@@ -1,6 +1,6 @@
 {
   "registry_version": "1.0-local-generated",
-  "generated_at": "2026-05-08",
+  "generated_at": "2026-05-09",
   "nodes": [
     {
       "node_id": "cloud_vm",
@@ -76,7 +76,7 @@
     {
       "node_id": "idevices",
       "role": "IDEVICE_CONTROL",
-      "status": "pending_tailscale_login_and_client_setup"
+      "status": "ready_for_review"
     }
   ],
   "installed_local_tools": {
@@ -92,7 +92,6 @@
     "codex": "present"
   },
   "remaining_blocks": [
-    "Laptop full Syncthing pairing or rclone remote configuration",
     "Cloud provider selection",
     "VM size and monthly budget",
     "Cloud credentials",

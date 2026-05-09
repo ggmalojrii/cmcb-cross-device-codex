@@ -10,11 +10,11 @@ Generated: 2026-05-08
 | Desktop/local base node | Done | Desktop agent, Syncthing, Tailscale, and validation are live. |
 | ChatGPT online handoff | Done, temporary | Public handoff tunnel is live for laptop onboarding and review. |
 | V: central shared drive | Done | `V:\CMCB-Central\CMCB-Shared` is the central artifacts/logs/test-packet root. |
-| Laptop test node | Agent running, smoke test passed | Laptop agent is running against `V:\CMCB-Central\CMCB-Shared`; smoke test `test_88fd27fe96` returned PASS. |
+| Laptop test node | Done, running | Laptop agent is running against `V:\CMCB-Central\CMCB-Shared`; smoke test `test_88fd27fe96` returned PASS. |
 | Local aVM worker | Done | WSL2 Ubuntu 24.04 is bootstrapped, validated, and enrolled in Tailscale as `cmcb-local-avm` / `100.95.38.105`. |
 | Cloud VM worker | Live on Oracle Always Free | Oracle VM is provisioned, bootstrapped, and enrolled in Tailscale as `cmcb-oracle-free-worker` / `100.98.49.26`. |
 | iPhone/iPad control | Ready for review | iDevice plan and mobile handoff page are generated. |
-| End-to-end cross-device validation | Pending | Requires laptop check-in and either local aVM or cloud VM. |
+| End-to-end cross-device validation | In progress | Core worker nodes are live; final paired-storage and job-routing smoke coverage remains. |
 
 ## Active services
 
@@ -34,7 +34,8 @@ Generated: 2026-05-08
 1. If you want mirrored storage on a second machine, pair that machine to `V:\CMCB-Central\CMCB-Shared` with Syncthing or rclone.
 2. Open `idevice_control.html` from an iPhone/iPad for mobile review.
 3. Use the local aVM or Oracle VM for free worker tasks; both are now live.
-4. Stop the public tunnel when onboarding is complete.
+4. Give the Oracle worker concrete repo jobs, then collect the results in `V:\CMCB-Central\CMCB-Shared`.
+5. Stop the public tunnel when onboarding is complete.
 
 ## Operator commands
 

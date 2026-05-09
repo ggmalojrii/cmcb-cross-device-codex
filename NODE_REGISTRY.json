@@ -15,14 +15,15 @@
         "artifact_packaging",
         "test_request_orchestration"
       ],
-      "shared_root": "~/cmcb-work/shared/CMCB-Shared",
+      "shared_root": "V:\\CMCB-Central\\CMCB-Shared",
       "repo_clone": "~/cmcb-work/projects/cmcb-cross-device-codex"
     },
     {
       "node_id": "desktop",
       "role": "DESKTOP_TEST_NODE",
-      "status": "planned",
-      "tailscale_name": "",
+      "status": "running",
+      "tailscale_name": "m-1232.tail62c74a.ts.net",
+      "tailscale_ipv4": "100.86.254.125",
       "os": "Windows recommended",
       "capabilities": [
         "minecraft_client_test",
@@ -30,25 +31,24 @@
         "windows_tool_test",
         "local_logs"
       ],
-      "shared_root": "F:/CMCB-Shared"
+      "shared_root": "V:\\CMCB-Central\\CMCB-Shared"
     },
     {
       "node_id": "laptop",
       "role": "LAPTOP_TEST_NODE",
-      "status": "planned",
-      "tailscale_name": "",
+      "status": "running",
       "os": "Windows recommended",
       "capabilities": [
         "secondary_client_test",
         "local_launcher_test",
         "local_logs"
       ],
-      "shared_root": "F:/CMCB-Shared"
+      "shared_root": "V:\\CMCB-Central\\CMCB-Shared"
     },
     {
       "node_id": "idevices",
       "role": "IDEVICE_CONTROL",
-      "status": "planned",
+      "status": "ready_for_review",
       "capabilities": [
         "ssh_review",
         "dashboard_review",
