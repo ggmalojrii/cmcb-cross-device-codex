@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMCB Housekeeping Console</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: Segoe UI, system-ui, sans-serif;
+      line-height: 1.45;
+    }
+    body {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+    p, li, label {
+      margin: 0 0 10px;
+    }
+    code, pre, textarea, input, select, button {
+      font-family: Consolas, ui-monospace, monospace;
+    }
+    code {
+      background: color-mix(in srgb, CanvasText 8%, transparent);
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 18px 0 26px;
+    }
+    .panel {
+      border: 1px solid color-mix(in srgb, CanvasText 18%, transparent);
+      border-radius: 6px;
+      padding: 14px;
+      background: color-mix(in srgb, Canvas 94%, CanvasText 6%);
+    }
+    .wide {
+      display: grid;
+      grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.15fr);
+      gap: 16px;
+      align-items: start;
+      margin-top: 18px;
+    }
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+    input, select, textarea, button {
+      font: inherit;
+      border-radius: 6px;
+      border: 1px solid color-mix(in srgb, CanvasText 18%, transparent);
+      padding: 10px 12px;
+      background: Canvas;
+      color: CanvasText;
+    }
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+    button {
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button.primary {
+      background: color-mix(in srgb, AccentColor 14%, Canvas);
+    }
+    button.secondary {
+      background: color-mix(in srgb, CanvasText 6%, Canvas);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .muted {
+      opacity: 0.82;
+    }
+    .pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      border: 1px solid color-mix(in srgb, CanvasText 18%, transparent);
+      margin-left: 8px;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      padding: 14px;
+      border-radius: 6px;
+      border: 1px solid color-mix(in srgb, CanvasText 18%, transparent);
+      background: color-mix(in srgb, CanvasText 5%, Canvas);
+      margin: 0;
+      min-height: 220px;
+    }
+    .statusline {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .ok {
+      color: #118344;
+      font-weight: 700;
+    }
+    .warn {
+      color: #a15c00;
+      font-weight: 700;
+    }
+    .error {
+      color: #b3261e;
+      font-weight: 700;
+    }
+    ul.clean {
+      margin: 0;
+      padding-left: 18px;
+    }
+    @media (max-width: 900px) {
+      .wide {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>CMCB Housekeeping Console</h1>
+  <p class="muted">A queue-based file management surface for safe add/edit/delete work. It is approval-gated, root-limited, and designed to keep the public site from becoming a raw shell.</p>
+
+  <div class="grid">
+    <div class="panel">
+      <h3>What It Does</h3>
+      <ul class="clean">
+        <li>Stages file requests for the repo and handoff surface.</li>
+        <li>Lets ChatGPT build request packets instead of guessing edits.</li>
+        <li>Requires approval before destructive changes are applied.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Allowed Roots</h3>
+      <ul class="clean">
+        <li><code>repo_clone</code></li>
+        <li><code>shared/CMCB-Shared/handoffs/chatgpt-online</code></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Not Allowed</h3>
+      <ul class="clean">
+        <li>Secrets, private keys, cloud tokens, or <code>.env</code> files.</li>
+        <li>Arbitrary shell commands.</li>
+        <li>Anything outside the two safe roots above.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Queue Flow</h3>
+      <ul class="clean">
+        <li>Build a request packet here.</li>
+        <li>Save it into the pending queue.</li>
+        <li>Move approved packets to the approved queue.</li>
+        <li>Let the housekeeping agent process approved work.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wide">
+    <section class="panel stack">
+      <div class="statusline">
+        <strong>Live state</strong>
+        <span class="pill" id="housekeeping-status">Loading...</span>
+      </div>
+      <div id="node-summary" class="stack muted"></div>
+      <div class="field">
+        <label for="root">Target root</label>
+        <select id="root">
+          <option value="repo">repo_clone</option>
+          <option value="handoff">shared/CMCB-Shared/handoffs/chatgpt-online</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="operation">Operation</label>
+        <select id="operation">
+          <option value="list">List / inspect</option>
+          <option value="add">Add file</option>
+          <option value="edit">Edit file</option>
+          <option value="delete">Delete file</option>
+          <option value="move">Move file</option>
+          <option value="rename">Rename file</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="path">Path</label>
+          <input id="path" placeholder="docs/example.md">
+        </div>
+        <div class="field">
+          <label for="destination">Destination path</label>
+          <input id="destination" placeholder="docs/example-renamed.md">
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="content-mode">Content mode</label>
+          <select id="content-mode">
+            <option value="replace">Replace</option>
+            <option value="prepend">Prepend</option>
+            <option value="append">Append</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="requested-by">Requested by</label>
+          <input id="requested-by" value="chatgpt">
+        </div>
+      </div>
+      <div class="field">
+        <label for="notes">Notes</label>
+        <input id="notes" placeholder="What should change and why">
+      </div>
+      <div class="field">
+        <label for="content">File content or replacement text</label>
+        <textarea id="content" placeholder="Paste the file body or the replacement block here."></textarea>
+      </div>
+      <div class="row">
+        <label><input type="checkbox" id="dry-run" checked> Dry run only</label>
+        <label><input type="checkbox" id="confirm-destructive"> Confirm destructive action</label>
+      </div>
+      <div class="row">
+        <button class="primary" id="build">Build request packet</button>
+        <button class="secondary" id="copy">Copy JSON</button>
+        <button class="secondary" id="download">Download JSON</button>
+      </div>
+      <p class="muted">Saved packets belong in <code>V:\CMCB-Central\CMCB-Shared\housekeeping\requests\pending</code> until they are approved.</p>
+    </section>
+
+    <section class="panel stack">
+      <div class="statusline">
+        <strong>Packet preview</strong>
+        <span class="pill">CMCB_HOUSEKEEPING_REQUEST</span>
+      </div>
+      <pre id="preview">{}</pre>
+      <div class="panel">
+        <h3>How To Use It</h3>
+        <ol>
+          <li>Choose the root and operation.</li>
+          <li>Fill in the path and content if needed.</li>
+          <li>Keep <code>Dry run only</code> checked until you want a real change.</li>
+          <li>Use <code>Copy JSON</code> or <code>Download JSON</code> to stage the request packet.</li>
+          <li>Move approved requests into the approved queue for the housekeeping agent.</li>
+        </ol>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel" style="margin-top: 18px;">
+    <h2>Live Status Snapshot</h2>
+    <p class="muted">This page reads the live handoff status and keeps the console honest about what is actually running.</p>
+    <div class="grid" id="live-cards"></div>
+  </section>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const preview = $("preview");
+    let lastPacket = {};
+
+    function makeId() {
+      const ts = new Date().toISOString().replace(/[-:.TZ]/g, "");
+      const rand = Math.random().toString(16).slice(2, 8);
+      return `housekeep_${ts}_${rand}`;
+    }
+
+    function buildPacket() {
+      const packet = {
+        packet_type: "CMCB_HOUSEKEEPING_REQUEST",
+        schema_version: "1.0",
+        request_id: makeId(),
+        requested_at: new Date().toISOString(),
+        requested_by: $("requested-by").value.trim() || "chatgpt",
+        target_root: $("root").value,
+        operation: $("operation").value,
+        path: $("path").value.trim(),
+        destination_path: $("destination").value.trim(),
+        content_mode: $("content-mode").value,
+        content: $("content").value,
+        notes: $("notes").value.trim(),
+        dry_run: $("dry-run").checked,
+        confirm_destructive: $("confirm-destructive").checked,
+        approval_required: true,
+      };
+      lastPacket = packet;
+      preview.textContent = JSON.stringify(packet, null, 2);
+      return packet;
+    }
+
+    function downloadPacket() {
+      const packet = buildPacket();
+      const blob = new Blob([JSON.stringify(packet, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `${packet.request_id}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    async function copyPacket() {
+      const packet = buildPacket();
+      await navigator.clipboard.writeText(JSON.stringify(packet, null, 2));
+    }
+
+    async function loadStatus() {
+      try {
+        const resp = await fetch("status.json", { cache: "no-store" });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const status = await resp.json();
+        $("housekeeping-status").textContent = status.housekeeping?.status || "ready";
+        const nodes = [
+          ["Desktop", status.desktop_node?.status || "unknown"],
+          ["Laptop", status.laptop_node?.status || "unknown"],
+          ["Local aVM", status.local_avm?.status || "unknown"],
+          ["Oracle VM", status.cloud_vm?.status || "unknown"],
+        ];
+        $("node-summary").innerHTML = nodes.map(([name, value]) => `<div><strong>${name}</strong>: <span>${value}</span></div>`).join("");
+        const cards = [
+          ["Console", status.housekeeping?.console || "housekeeping.html"],
+          ["Pending queue", status.housekeeping?.queues?.pending || "V:\\CMCB-Central\\CMCB-Shared\\housekeeping\\requests\\pending"],
+          ["Approved queue", status.housekeeping?.queues?.approved || "V:\\CMCB-Central\\CMCB-Shared\\housekeeping\\requests\\approved"],
+          ["Results", status.housekeeping?.queues?.results || "V:\\CMCB-Central\\CMCB-Shared\\housekeeping\\results"],
+        ];
+        $("live-cards").innerHTML = cards.map(([title, value]) => `
+          <div class="panel">
+            <h3>${title}</h3>
+            <p><code>${value}</code></p>
+          </div>
+        `).join("");
+      } catch (err) {
+        $("housekeeping-status").textContent = "offline";
+        $("housekeeping-status").className = "pill error";
+        $("node-summary").textContent = `Could not load status.json: ${err.message}`;
+      }
+    }
+
+    $("build").addEventListener("click", (event) => {
+      event.preventDefault();
+      buildPacket();
+    });
+    $("download").addEventListener("click", (event) => {
+      event.preventDefault();
+      downloadPacket();
+    });
+    $("copy").addEventListener("click", async (event) => {
+      event.preventDefault();
+      try {
+        await copyPacket();
+        $("copy").textContent = "Copied";
+        setTimeout(() => $("copy").textContent = "Copy JSON", 1200);
+      } catch (err) {
+        alert(`Copy failed: ${err.message}`);
+      }
+    });
+    ["root", "operation", "path", "destination", "content-mode", "requested-by", "notes", "content", "dry-run", "confirm-destructive"].forEach((id) => {
+      $(id).addEventListener("input", buildPacket);
+      $(id).addEventListener("change", buildPacket);
+    });
+
+    buildPacket();
+    loadStatus();
+  </script>
+</body>
+</html>

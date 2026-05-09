@@ -59,6 +59,10 @@ Package date: 2026-05-07
 - ChatGPT check-in procedure: PASS
   - `CHATGPT_CHECKIN_PROCEDURE.md` added as the decision order for checking the handoff.
   - `MONITORING_AND_ESCALATION.md` added as the interruption list.
+- Housekeeping console: PASS
+  - `HOUSEKEEPING_CONSOLE.md` added as the request/approval guide for safe file management.
+  - `housekeeping.html` added as the live console for request packet generation.
+  - `housekeeping_agent.py` added as the approval-gated queue processor for safe add/edit/delete work.
 - Laptop public onboarding: PASS
   - `laptop_onboarding.ps1` PowerShell parser validation passed.
   - Public onboarding script returned HTTP 200.

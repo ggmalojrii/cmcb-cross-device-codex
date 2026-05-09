@@ -133,9 +133,24 @@
       "purpose": "Sanitized mobile review/control page for iPhone and iPad."
     },
     {
+      "path": "shared/CMCB-Shared/handoffs/chatgpt-online/housekeeping.html",
+      "type": "public-handoff",
+      "purpose": "Sanitized housekeeping console for request packet generation."
+    },
+    {
+      "path": "shared/CMCB-Shared/handoffs/chatgpt-online/HOUSEKEEPING_CONSOLE.md",
+      "type": "public-handoff",
+      "purpose": "Public housekeeping request and approval guide."
+    },
+    {
       "path": "CHATGPT_CHECKIN_PROCEDURE.md",
       "type": "procedure",
       "purpose": "ChatGPT check-in flow for deciding whether to continue locally or alert the user."
+    },
+    {
+      "path": "HOUSEKEEPING_CONSOLE.md",
+      "type": "housekeeping-doc",
+      "purpose": "Request and approval guide for safe file management."
     },
     {
       "path": "MONITORING_AND_ESCALATION.md",
@@ -403,6 +418,16 @@
       "purpose": "Serve sanitized handoff files and accept laptop check-ins."
     },
     {
+      "path": "13_SCRIPTS/housekeeping_agent.py",
+      "type": "cloud-worker-agent",
+      "purpose": "Approval-gated housekeeping queue processor for safe file operations."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/run_housekeeping_agent.sh",
+      "type": "cloud-worker-agent-launcher",
+      "purpose": "Housekeeping queue agent launcher script."
+    },
+    {
       "path": "19_GENERATED_DEPLOYMENT/admin/ADMIN_INSTALL_MANIFEST.plan.json",
       "type": "admin-plan",
       "purpose": "Disabled plan-only admin install manifest."
@@ -411,6 +436,11 @@
       "path": "19_GENERATED_DEPLOYMENT/templates/CMCB_TEST_REQUEST.allowed.schema.json",
       "type": "packet-template",
       "purpose": "Aligned test request schema matching local agent allowlist."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/templates/HOUSEKEEPING_REQUEST.allowed.schema.json",
+      "type": "packet-template",
+      "purpose": "Housekeeping request schema for safe file-management requests."
     },
     {
       "path": "19_GENERATED_DEPLOYMENT/ssh/README.md",

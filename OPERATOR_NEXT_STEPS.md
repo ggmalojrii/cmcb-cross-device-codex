@@ -20,7 +20,7 @@ We are no longer in setup mode. The live state is:
 4. Keeping the local aVM available as the free fallback worker.
 5. Keeping the Oracle mirror healthy and free.
 6. Surfacing failure signals clearly so you only step in when something actually needs attention.
-6. Surfacing failure signals clearly so you only step in when something actually needs attention.
+7. Using the housekeeping console to stage file changes safely instead of opening a raw terminal on the public site.
 
 ## What Happens Next
 
@@ -29,13 +29,14 @@ We are no longer in setup mode. The live state is:
 3. Refresh the public handoff if the live state changes.
 4. Stop the public tunnel when nobody needs external review.
 5. The latest Oracle batch (`repo_status5` + `workspace_inventory8`) already passed, so the next batch can target a richer repo task.
-6. Keep `MONITORING_AND_ESCALATION.md` handy for the signals that should interrupt the normal loop.
-6. Keep `MONITORING_AND_ESCALATION.md` handy for the signals that should interrupt the normal loop.
+6. Stage a housekeeping request packet if you want the agent to fix or tidy files for you.
+7. Keep `MONITORING_AND_ESCALATION.md` handy for the signals that should interrupt the normal loop.
 
 ## Live Endpoints and Paths
 
 - Public handoff URL: `https://salvation-securities-makes-steps.trycloudflare.com`
 - Public status JSON: `https://salvation-securities-makes-steps.trycloudflare.com/status.json`
+- Public housekeeping console: `https://salvation-securities-makes-steps.trycloudflare.com/housekeeping.html`
 - Laptop onboarding script: `https://salvation-securities-makes-steps.trycloudflare.com/laptop_onboarding.ps1`
 - Laptop bootstrap ZIP: `https://salvation-securities-makes-steps.trycloudflare.com/laptop_node_bootstrap.zip`
 - Desktop local test agent PID file: `shared/CMCB-Shared/logs/desktop_agent.pid`
@@ -49,6 +50,7 @@ We are no longer in setup mode. The live state is:
 - Do not sync secrets, private keys, browser cookies, cloud tokens, password databases, or `.env` files into the shared root.
 - Keep the Oracle VM on the free-tier path unless you explicitly choose to spend money.
 - Keep the public handoff sanitized; it is for status, not secrets.
+- Keep housekeeping requests inside the approved roots and approval gates.
 
 ## Useful Commands
 

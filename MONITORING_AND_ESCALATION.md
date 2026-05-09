@@ -18,6 +18,7 @@ This is the short answer to: how do problems get your attention?
 3. Tailscale drops off on the Oracle VM, local aVM, desktop, or laptop.
 4. The public handoff no longer matches the live state.
 5. A change needs approval, cost, secrets, or admin installs.
+6. A housekeeping request gets stuck in pending or approved without a result packet.
 
 ## First Place To Look
 
@@ -26,6 +27,7 @@ This is the short answer to: how do problems get your attention?
 - `OPERATOR_NEXT_STEPS.md`
 - `shared/CMCB-Shared/handoffs/chatgpt-online/status.json`
 - `shared/CMCB-Shared/handoffs/chatgpt-online/index.html`
+- `shared/CMCB-Shared/handoffs/chatgpt-online/housekeeping.html`
 
 ## What I Do When Something Breaks
 
@@ -33,6 +35,7 @@ This is the short answer to: how do problems get your attention?
 - Capture the error in shared logs.
 - Update the handoff so the issue is visible.
 - Tell you exactly what needs your attention.
+- Move or re-stage housekeeping packets when a request is blocked by path safety or approval gates.
 
 ## Your Rule Of Thumb
 

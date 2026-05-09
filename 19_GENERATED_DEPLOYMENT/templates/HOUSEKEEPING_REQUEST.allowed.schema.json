@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CMCB Housekeeping Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packet_type",
+    "schema_version",
+    "request_id",
+    "requested_at",
+    "requested_by",
+    "target_root",
+    "operation",
+    "path",
+    "content_mode",
+    "content",
+    "notes",
+    "dry_run",
+    "confirm_destructive",
+    "approval_required"
+  ],
+  "properties": {
+    "packet_type": { "const": "CMCB_HOUSEKEEPING_REQUEST" },
+    "schema_version": { "type": "string" },
+    "request_id": { "type": "string", "minLength": 1 },
+    "requested_at": { "type": "string", "minLength": 1 },
+    "requested_by": { "type": "string", "minLength": 1 },
+    "target_root": {
+      "type": "string",
+      "enum": ["repo", "handoff"]
+    },
+    "operation": {
+      "type": "string",
+      "enum": ["list", "add", "edit", "delete", "move", "rename"]
+    },
+    "path": { "type": "string" },
+    "destination_path": { "type": "string" },
+    "content_mode": {
+      "type": "string",
+      "enum": ["replace", "prepend", "append"]
+    },
+    "content": { "type": "string" },
+    "notes": { "type": "string" },
+    "dry_run": { "type": "boolean" },
+    "confirm_destructive": { "type": "boolean" },
+    "approval_required": { "type": "boolean" }
+  }
+}

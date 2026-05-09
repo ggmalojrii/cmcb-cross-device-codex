@@ -69,6 +69,23 @@
     "private_network": "Tailscale",
     "ssh_policy": "tailnet_only_after_vm_or_avm_exists"
   },
+  "housekeeping": {
+    "status": "ready_for_request_queue",
+    "console": "housekeeping.html",
+    "request_doc": "HOUSEKEEPING_CONSOLE.md",
+    "schema": "19_GENERATED_DEPLOYMENT/templates/HOUSEKEEPING_REQUEST.allowed.schema.json",
+    "queues": {
+      "pending": "V:\\CMCB-Central\\CMCB-Shared\\housekeeping\\requests\\pending",
+      "approved": "V:\\CMCB-Central\\CMCB-Shared\\housekeeping\\requests\\approved",
+      "results": "V:\\CMCB-Central\\CMCB-Shared\\housekeeping\\results"
+    },
+    "allowed_roots": [
+      "repo_clone",
+      "shared/CMCB-Shared/handoffs/chatgpt-online"
+    ],
+    "destructive_ops": "approval_required",
+    "terminal": "command_packet_preview_only"
+  },
   "roadmap_snapshot": {
     "phase": "operating",
     "summary": "Desktop, laptop, local aVM, and Oracle VM are live; the work now is repo tasks, smoke checks, and keeping the handoff current.",
@@ -76,12 +93,14 @@
       "Run a focused repo job on the Oracle worker.",
       "Keep the desktop and laptop pointed at V:\\CMCB-Central\\CMCB-Shared.",
       "Use the local aVM as the free fallback worker.",
+      "Use the housekeeping console for approval-gated file requests.",
       "Keep the public handoff sanitized and up to date."
     ]
   },
   "next_actions": [
     "Run a real repo job on the Oracle worker.",
     "Pair another machine to V:\\CMCB-Central\\CMCB-Shared if you want mirrored storage.",
+    "Use housekeeping.html for safe file-management requests inside the allowed roots.",
     "Use the local aVM for free/local Codex worker tasks.",
     "Keep the public handoff current with the live state.",
     "Keep public ports closed and use Tailscale for private access."

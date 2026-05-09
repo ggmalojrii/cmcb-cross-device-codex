@@ -55,6 +55,7 @@
     <div class="item"><strong>Local aVM</strong><br><span class="ok">Running</span>: <code>100.95.38.105</code></div>
     <div class="item"><strong>Oracle VM</strong><br><span class="ok">Live</span>: <code>100.98.49.26</code></div>
     <div class="item"><strong>Central root</strong><br><span class="ok">Active</span>: <code>V:\CMCB-Central\CMCB-Shared</code></div>
+    <div class="item"><strong>Housekeeping</strong><br><span class="ok">Ready</span>: request queue + approval flow</div>
     <div class="item"><strong>Public exposure</strong><br><span class="ok">This page only</span></div>
   </div>
 
@@ -64,6 +65,7 @@
     <li>The environment is now in the operating phase.</li>
     <li>Desktop, laptop, local aVM, and Oracle VM are all live.</li>
     <li>The shared root is centralized at <code>V:\CMCB-Central\CMCB-Shared</code>.</li>
+    <li>The housekeeping console is available for safe file requests and approval-gated edits.</li>
     <li>The public tunnel exists for review and onboarding, not for secrets.</li>
   </ul>
 
@@ -84,6 +86,8 @@
     <li><a href="CHATGPT_CHECKIN_PROCEDURE.md"><code>CHATGPT_CHECKIN_PROCEDURE.md</code></a></li>
     <li><a href="CHATGPT_PROMPT_BUNDLE.md"><code>CHATGPT_PROMPT_BUNDLE.md</code></a></li>
     <li><a href="MONITORING_AND_ESCALATION.md"><code>MONITORING_AND_ESCALATION.md</code></a></li>
+    <li><a href="housekeeping.html"><code>housekeeping.html</code></a></li>
+    <li><a href="HOUSEKEEPING_CONSOLE.md"><code>HOUSEKEEPING_CONSOLE.md</code></a></li>
     <li><code>OPERATOR_NEXT_STEPS.md</code></li>
     <li><code>ROADMAP_STATUS.md</code></li>
     <li><code>LOCAL_AVM_DEPLOYMENT_PLAN.md</code></li>
@@ -109,12 +113,14 @@ powershell -ExecutionPolicy Bypass -File $p</code></pre>
     <li>Using the Oracle worker for real repo jobs and packet validation.</li>
     <li>Keeping the desktop and laptop smoke checks pointed at the central shared root.</li>
     <li>Keeping the local aVM available as the free fallback worker.</li>
+    <li>Building the housekeeping console so safe file edits can be requested and applied in a queue.</li>
   </ol>
 
   <h2>What Comes Next</h2>
   <ol>
     <li>Run a focused repo task on the Oracle worker.</li>
     <li>Add mirrored storage on any other machine that needs it.</li>
+    <li>Use the housekeeping console to stage file additions, edits, deletes, and renames without a raw terminal.</li>
     <li>Open the iDevice control page if you want review-only access on mobile.</li>
     <li>Stop the public tunnel when no one needs external review.</li>
   </ol>
@@ -134,8 +140,13 @@ powershell -ExecutionPolicy Bypass -File $p</code></pre>
     <li>Desktop or laptop smoke checks that stop passing.</li>
     <li>Tailscale dropping off on any live node.</li>
     <li>The public handoff drifting away from the live state.</li>
+    <li>Housekeeping requests that get stuck in pending or approved without a result packet.</li>
     <li>Anything that needs approval, costs money, or touches secrets/admin installs.</li>
   </ul>
+
+  <h2>Housekeeping Console</h2>
+  <p>The housekeeping console is the safe file-management surface. It builds request packets for add, edit, delete, move, rename, and list operations inside the allowed CMCB roots. Destructive changes stay approval-gated and secret-like paths are blocked.</p>
+  <p><a href="housekeeping.html">Open the housekeeping console</a> or read <a href="HOUSEKEEPING_CONSOLE.md"><code>HOUSEKEEPING_CONSOLE.md</code></a> for the queue flow and safety rules.</p>
 
   <h2>Safety Boundaries</h2>
   <p>No secrets should be pasted into this page or synced through <code>CMCB-Shared</code>. Public access is limited to this sanitized handoff surface.</p>

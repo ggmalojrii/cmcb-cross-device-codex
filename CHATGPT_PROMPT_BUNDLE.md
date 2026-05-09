@@ -16,15 +16,17 @@ Include these files in the zip:
 2. `shared/CMCB-Shared/handoffs/chatgpt-online/index.html`
 3. `CHATGPT_CHECKIN_PROCEDURE.md`
 4. `MONITORING_AND_ESCALATION.md`
-5. `ROADMAP_STATUS.md`
-6. `OPERATOR_NEXT_STEPS.md`
-7. `VALIDATION_REPORT.md`
-8. `GENERATED_FILES_MANIFEST.json`
-9. `NODE_REGISTRY.json`
-10. `README.md`
+5. `HOUSEKEEPING_CONSOLE.md`
+6. `ROADMAP_STATUS.md`
+7. `OPERATOR_NEXT_STEPS.md`
+8. `VALIDATION_REPORT.md`
+9. `GENERATED_FILES_MANIFEST.json`
+10. `NODE_REGISTRY.json`
+11. `README.md`
 
 If the bundle is for the public handoff only, include the first four files plus the roadmap pair.
-If the bundle is for a deeper review, include all ten.
+If the bundle is for a deeper review, include all eleven.
+If the bundle needs housekeeping context, include `HOUSEKEEPING_CONSOLE.md` and `housekeeping.html` from the live handoff folder.
 
 ## Prompt Template
 
@@ -47,8 +49,9 @@ Use a short prompt like this:
 2. `index.html` second.
 3. `ROADMAP_STATUS.md` and `OPERATOR_NEXT_STEPS.md` for current direction.
 4. `MONITORING_AND_ESCALATION.md` for tripwires.
-5. `VALIDATION_REPORT.md` and `GENERATED_FILES_MANIFEST.json` if a deeper review is needed.
-6. `NODE_REGISTRY.json` if there is any question about live node roles.
+5. `HOUSEKEEPING_CONSOLE.md` if file management or cleanup is part of the request.
+6. `VALIDATION_REPORT.md` and `GENERATED_FILES_MANIFEST.json` if a deeper review is needed.
+7. `NODE_REGISTRY.json` if there is any question about live node roles.
 
 ## What The Bundle Should Produce
 
