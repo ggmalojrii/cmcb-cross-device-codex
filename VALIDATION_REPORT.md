@@ -106,6 +106,8 @@ Package date: 2026-05-07
   - Cloud VM repo status on refreshed head `test_cloud_vm_repo_status2`: PASS.
   - Cloud VM repo refresh on refreshed head `test_cloud_vm_repo_refresh1`: PASS.
   - Cloud VM workspace inventory packet `test_cloud_vm_workspace_inventory1`: PASS.
+  - Cloud VM focused subtree inventory `test_cloud_vm_subtree_inventory1`: PASS.
+  - Cloud VM mirrored platform subtree inventory `test_cloud_vm_subtree_inventory2`: PASS.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS
