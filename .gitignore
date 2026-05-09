@@ -26,6 +26,11 @@ out/
 downloads/
 *.zip
 
+# Cloud worker runtime packets and logs
+shared/CMCB-Shared/test_requests/cloud_vm/
+shared/CMCB-Shared/test_results/cloud_vm/
+shared/CMCB-Shared/logs/cloud_vm_*.txt
+
 # OS/editor noise
 .DS_Store
 Thumbs.db
