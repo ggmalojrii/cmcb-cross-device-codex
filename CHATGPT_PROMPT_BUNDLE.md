@@ -23,10 +23,13 @@ Include these files in the zip:
 9. `GENERATED_FILES_MANIFEST.json`
 10. `NODE_REGISTRY.json`
 11. `README.md`
+12. `CHATGPT_ACCOMMODATION_DROPIN.md`
+13. `README_CODEX_CHATGPT_AGENT_ACCOMMODATION.md`
 
 If the bundle is for the public handoff only, include the first four files plus the roadmap pair.
-If the bundle is for a deeper review, include all eleven.
+If the bundle is for a deeper review, include all thirteen.
 If the bundle needs housekeeping context, include `HOUSEKEEPING_CONSOLE.md` and `housekeeping.html` from the live handoff folder.
+If the bundle is about the accommodation contract, include the drop-in note and the accommodation README together.
 
 ## Prompt Template
 

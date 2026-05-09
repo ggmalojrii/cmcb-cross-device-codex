@@ -61,6 +61,8 @@ Package date: 2026-05-07
   - `MONITORING_AND_ESCALATION.md` added as the interruption list.
 - ChatGPT accommodation drop-in: PASS
   - `CHATGPT_ACCOMMODATION_DROPIN.md` added as a compact handoff summary for another ChatGPT session.
+- ChatGPT prompt bundle: PASS
+  - `CHATGPT_PROMPT_BUNDLE.md` now includes the accommodation drop-in alongside the accommodation README for future handoffs.
 - Housekeeping console: PASS
   - `HOUSEKEEPING_CONSOLE.md` added as the request/approval guide for safe file management.
   - `housekeeping.html` added as the live console for request packet generation.
