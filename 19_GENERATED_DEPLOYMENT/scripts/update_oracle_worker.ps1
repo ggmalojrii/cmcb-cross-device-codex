@@ -20,9 +20,8 @@ if (-not (Get-Command ssh.exe -ErrorAction SilentlyContinue)) {
 
 $RemoteCommand = @"
 set -euo pipefail
-cd ~/cmcb-work/projects/cmcb-cross-device-codex
 export CMCB_GIT_REPO_URL='$RepoUrl'
-bash '19_GENERATED_DEPLOYMENT/scripts/sync_oracle_worker.sh'
+bash "`$HOME/cmcb-work/projects/cmcb-cross-device-codex/19_GENERATED_DEPLOYMENT/scripts/sync_oracle_worker.sh"
 "@
 
 & ssh.exe `
