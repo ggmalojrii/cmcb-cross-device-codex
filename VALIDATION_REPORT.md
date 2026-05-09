@@ -112,6 +112,7 @@ Package date: 2026-05-07
   - Cloud VM Terraform validation packet `test_cloud_vm_terraform_validate1`: PASS.
   - Cloud VM Terraform validation packet `test_cloud_vm_terraform_validate2`: PASS using resolved `~/bin/terraform`.
   - Cloud VM Terraform fmt-check packet `test_cloud_vm_terraform_fmt_check1`: PASS.
+  - `12_TEMPLATES/CMCB_TEST_REQUEST.schema.json` updated to match the live packet allowlist.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS
@@ -128,5 +129,4 @@ Package date: 2026-05-07
 - Codex CLI is installed inside the local aVM, but live Codex work may require interactive Codex/OpenAI authentication.
 - The old package-local `shared\CMCB-Shared` folder remains as fallback. Live services use `V:\CMCB-Central\CMCB-Shared` directly.
 - A partial `shared\CMCB-Shared.pre-v-central-*` backup may exist from the attempted junction swap; it is not the live shared root.
-- Original `12_TEMPLATES/CMCB_TEST_REQUEST.schema.json` test types drift from the local agent allowlist. A generated aligned schema is provided but not applied over the original.
 - The Oracle Terraform template is still a template only; it needs real OCIDs and image selection before `terraform plan` on an actual account.

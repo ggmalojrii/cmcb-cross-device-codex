@@ -3,13 +3,15 @@
   "schema_version": "1.0",
   "test_id": "",
   "source_actor": "CODEX_VM",
-  "target_actor": "DESKTOP_TEST_NODE|LAPTOP_TEST_NODE",
+  "target_actor": "CLOUD_VM|DESKTOP_TEST_NODE|LAPTOP_TEST_NODE",
   "project": "",
   "artifact": "",
   "artifact_sha256": "",
-  "test_type": "file_inventory|minecraft_client_launch|fabric_server|visual_check|windows_tool|performance|custom_script",
+  "test_type": "file_inventory|artifact_presence|environment_validation|repo_status|repo_refresh|repo_validate|workspace_inventory|terraform_validate|terraform_fmt_check|git_log|minecraft_client_manual|minecraft_log_collect|visual_manual|custom_script",
   "steps": [],
-  "expected_outputs": [],
+  "expected_outputs": [
+    "CMCB_TEST_RESULT"
+  ],
   "risk_level": "LOW",
   "requires_user_approval": false,
   "timeout_minutes": 20,

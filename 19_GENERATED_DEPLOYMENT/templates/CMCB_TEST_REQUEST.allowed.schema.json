@@ -7,7 +7,7 @@
   "project": "",
   "artifact": "",
   "artifact_sha256": "",
-  "test_type": "file_inventory|artifact_presence|environment_validation|repo_status|repo_refresh|git_log|minecraft_client_manual|minecraft_log_collect|visual_manual|custom_script",
+  "test_type": "file_inventory|artifact_presence|environment_validation|repo_status|repo_refresh|repo_validate|workspace_inventory|terraform_validate|terraform_fmt_check|git_log|minecraft_client_manual|minecraft_log_collect|visual_manual|custom_script",
   "steps": [],
   "expected_outputs": [
     "CMCB_TEST_RESULT"
