@@ -100,8 +100,10 @@
       "index.html",
       "ROADMAP_STATUS.md",
       "OPERATOR_NEXT_STEPS.md",
-      "MONITORING_AND_ESCALATION.md"
+      "MONITORING_AND_ESCALATION.md",
+      "CHATGPT_PROMPT_BUNDLE.md"
     ],
-    "decision_rule": "If live state matches and workers are passing, stay local. If a watch signal fires or approval is needed, stop and tell the user."
+    "decision_rule": "If live state matches and workers are passing, stay local. If a watch signal fires or approval is needed, stop and tell the user.",
+    "prompt_bundle_doc": "CHATGPT_PROMPT_BUNDLE.md"
   }
 }

@@ -11,6 +11,7 @@ This is the procedure ChatGPT should follow before deciding whether to do more w
 3. Read `ROADMAP_STATUS.md`.
 4. Read `OPERATOR_NEXT_STEPS.md`.
 5. Read `MONITORING_AND_ESCALATION.md` if any signal looks off.
+6. Read `CHATGPT_PROMPT_BUNDLE.md` if you need to package the state into a prompt/zip for another model.
 
 ## Decision Rule
 
@@ -25,6 +26,7 @@ This is the procedure ChatGPT should follow before deciding whether to do more w
 - What passed recently.
 - What failed or drifted, if anything.
 - Whether you need to do anything or whether the machines can keep going.
+- If a prompt/zip bundle is needed, include the current live state plus the exact files from `CHATGPT_PROMPT_BUNDLE.md`.
 
 ## How This Saves Limits
 
