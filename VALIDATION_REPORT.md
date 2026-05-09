@@ -113,6 +113,7 @@ Package date: 2026-05-07
   - Cloud VM Terraform validation packet `test_cloud_vm_terraform_validate2`: PASS using resolved `~/bin/terraform`.
   - Cloud VM Terraform fmt-check packet `test_cloud_vm_terraform_fmt_check1`: PASS.
   - `12_TEMPLATES/CMCB_TEST_REQUEST.schema.json` updated to match the live packet allowlist.
+  - Cloud VM schema subtree inventory `test_cloud_vm_subtree_inventory5`: PASS.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS
