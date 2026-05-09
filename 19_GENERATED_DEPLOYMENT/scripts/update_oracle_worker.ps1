@@ -20,8 +20,16 @@ if (-not (Get-Command ssh.exe -ErrorAction SilentlyContinue)) {
 
 $RemoteCommand = @"
 set -euo pipefail
-export CMCB_GIT_REPO_URL='$RepoUrl'
-bash "`$HOME/cmcb-work/projects/cmcb-cross-device-codex/19_GENERATED_DEPLOYMENT/scripts/sync_oracle_worker.sh"
+REPO_DIR="`$HOME/cmcb-work/projects/cmcb-cross-device-codex"
+if [ -d "`$REPO_DIR/.git" ]; then
+  cd "`$REPO_DIR"
+  git pull --ff-only
+else
+  rm -rf "`$REPO_DIR"
+  git clone '$RepoUrl' "`$REPO_DIR"
+  cd "`$REPO_DIR"
+fi
+python3 13_SCRIPTS/validate_environment.py
 "@
 
 & ssh.exe `
