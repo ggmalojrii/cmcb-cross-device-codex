@@ -97,12 +97,20 @@ $Report = [ordered]@{
 }
 
 $ReportPath = Join-Path $ReportsDir "ORACLE_VM_CONNECT_REPORT.json"
-$Report | ConvertTo-Json -Depth 8 | Set-Content -Encoding UTF8 -Path $ReportPath
+[System.IO.File]::WriteAllText(
+    $ReportPath,
+    ($Report | ConvertTo-Json -Depth 8) + [Environment]::NewLine,
+    [System.Text.UTF8Encoding]::new($false)
+)
 
 if ($SharedRoot) {
     $SharedLogDir = Join-Path $SharedRoot "logs"
     New-Item -ItemType Directory -Force -Path $SharedLogDir | Out-Null
-    $Report | ConvertTo-Json -Depth 8 | Set-Content -Encoding UTF8 -Path (Join-Path $SharedLogDir "oracle_vm_connect_report.json")
+    [System.IO.File]::WriteAllText(
+        (Join-Path $SharedLogDir "oracle_vm_connect_report.json"),
+        ($Report | ConvertTo-Json -Depth 8) + [Environment]::NewLine,
+        [System.Text.UTF8Encoding]::new($false)
+    )
 }
 
 if (-not (Get-Command ssh.exe -ErrorAction SilentlyContinue)) {
