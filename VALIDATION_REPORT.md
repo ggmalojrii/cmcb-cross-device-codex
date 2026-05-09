@@ -86,6 +86,8 @@ Package date: 2026-05-07
   - Local aVM readback of V: central probe packet: PASS.
   - Desktop `file_inventory` smoke packet `test_v_central_desktop_file_inventory`: PASS.
   - Laptop `file_inventory` smoke packet `test_v_central_laptop_file_inventory`: PASS.
+  - Desktop `artifact_presence` smoke packet `test_v_central_desktop_artifact_presence`: PASS.
+  - Laptop `artifact_presence` smoke packet `test_v_central_laptop_artifact_presence`: PASS.
 - Oracle VM worker: PASS
   - Oracle VM provisioned on Always Free path.
   - VM `cmcb-oracle-free-worker` enrolled in Tailscale with IPv4 `100.98.49.26`.
