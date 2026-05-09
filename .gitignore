@@ -1,0 +1,32 @@
+# Local secrets and credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.kdbx
+*.pass
+
+# Local caches and build output
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.terraform/
+*.tfstate
+*.tfstate.*
+node_modules/
+dist/
+build/
+out/
+
+# Local downloads and tooling
+.tools/
+downloads/
+*.zip
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -29,3 +29,18 @@ Codex can be instructed to install programs/apps with admin privileges only thro
 - `13_SCRIPTS/vm_orchestrator.py`
 - `13_SCRIPTS/local_test_agent.py`
 - `13_SCRIPTS/admin_install_manager.py`
+
+## Current live state
+
+- Oracle worker repo clone: `~/cmcb-work/projects/cmcb-cross-device-codex`
+- Oracle VM helper from Windows: `19_GENERATED_DEPLOYMENT/scripts/connect_oracle_vm.ps1`
+- Central shared root: `V:\CMCB-Central\CMCB-Shared`
+- Use Git for source and keep secrets out of the repo.
+
+## Recommended workflow
+
+1. Use the Windows SSH helper to reach the Oracle worker.
+2. Make changes in this repo clone first.
+3. Push to GitHub after each meaningful checkpoint.
+4. Pull on the Oracle VM before running validation there.
+5. Keep credentials, private keys, and `.env` files local only.
