@@ -1,0 +1,13 @@
+[Unit]
+Description=CMCB Oracle Worker Packet Agent
+After=network-online.target
+
+[Service]
+Type=simple
+Environment=CMCB_WORK_ROOT=%h/cmcb-work
+ExecStart=%h/cmcb-work/projects/cmcb-cross-device-codex/19_GENERATED_DEPLOYMENT/scripts/run_oracle_worker_agent.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

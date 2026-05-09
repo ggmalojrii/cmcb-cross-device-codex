@@ -208,6 +208,21 @@
       "purpose": "Packet agent for low-risk Oracle VM repo and environment tasks."
     },
     {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/run_oracle_worker_agent.sh",
+      "type": "cloud-worker-agent-launcher",
+      "purpose": "Continuous Oracle worker agent launcher script."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/install_oracle_worker_service.sh",
+      "type": "cloud-worker-service-installer",
+      "purpose": "Installs and enables the Oracle worker systemd user service."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/systemd/user/cmcb-oracle-worker.service",
+      "type": "systemd-unit",
+      "purpose": "Persistent user service for the Oracle packet agent."
+    },
+    {
       "path": "19_GENERATED_DEPLOYMENT/scripts/connect_oracle_vm.ps1",
       "type": "operator-helper",
       "purpose": "Convenience SSH helper for the Oracle VM using the live status packet."
