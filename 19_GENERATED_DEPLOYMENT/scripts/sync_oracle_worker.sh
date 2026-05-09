@@ -9,13 +9,6 @@ SHARED_ROOT="$BASE/shared/CMCB-Shared"
 LOG_DIR="$SHARED_ROOT/logs"
 
 mkdir -p "$BASE/projects" "$REPORT_DIR" "$LOG_DIR"
-
-rm -f \
-  "$SHARED_ROOT/test_requests/cloud_vm/"*.json \
-  "$SHARED_ROOT/test_results/cloud_vm/"*.json \
-  "$SHARED_ROOT/logs/cloud_vm_"*.txt \
-  2>/dev/null || true
-
 mkdir -p "$SHARED_ROOT/test_requests/cloud_vm" "$SHARED_ROOT/test_results/cloud_vm"
 
 if [[ -d "$REPO_DIR/.git" ]]; then
