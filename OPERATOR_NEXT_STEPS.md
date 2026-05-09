@@ -30,6 +30,7 @@ Generated: 2026-05-08
 - Oracle VM Tailscale IPv4: `100.98.49.26`
 - Oracle VM Tailscale hostname: `cmcb-oracle-free-worker`
 - Oracle VM SSH helper: `19_GENERATED_DEPLOYMENT/scripts/connect_oracle_vm.ps1`
+- Oracle VM repo clone: `~/cmcb-work/projects/cmcb-cross-device-codex`
 
 ## What To Do Now
 
@@ -42,6 +43,7 @@ Generated: 2026-05-08
 7. Keep laptop agent traffic pointed at `V:\CMCB-Central\CMCB-Shared`.
 9. Do not sync secrets, `.env` files, SSH private keys, cloud tokens, browser cookies, or password databases.
 10. If you want the Oracle worker to do real source work, provide or place the repo URL under `Git repo URL(s)` and use the SSH helper to reach the VM quickly.
+11. The repo `cmcb-cross-device-codex` is already cloned on the Oracle worker, so you can start using it directly.
 
 ## Stop Commands
 

@@ -68,7 +68,7 @@ if (-not $PublicIp -and $PacketInfo -and $PacketInfo.Packet.public_ipv4) {
 
 if (-not $PrivateKeyPath) {
     $DefaultKey = Join-Path $env:USERPROFILE ".ssh\oracle\ssh-key-2026-05-09.key"
-    if ($PacketInfo -and $PacketInfo.Packet.ssh_private_key) {
+    if ($PacketInfo -and $PacketInfo.Packet.PSObject.Properties.Name -contains "ssh_private_key") {
         $PrivateKeyPath = [string]$PacketInfo.Packet.ssh_private_key
     }
     else {

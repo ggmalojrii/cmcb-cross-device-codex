@@ -46,6 +46,7 @@ Generated: 2026-05-09
 ## Workspace Created
 
 - `~/cmcb-work/projects`
+- `~/cmcb-work/projects/cmcb-cross-device-codex`
 - `~/cmcb-work/shared/CMCB-Shared/test_requests/desktop`
 - `~/cmcb-work/shared/CMCB-Shared/test_requests/laptop`
 - `~/cmcb-work/shared/CMCB-Shared/test_results/desktop`
@@ -63,6 +64,7 @@ Generated: 2026-05-09
 - Tailscale is installed and enrolled.
 - Tailscale login URL was used: `https://login.tailscale.com/a/f3fdd0b01b3da`
 - The VM can ping the local aVM and desktop over tailnet.
+- The GitHub repo `https://github.com/ggmalojrii/cmcb-cross-device-codex` is cloned at `~/cmcb-work/projects/cmcb-cross-device-codex`.
 
 ## Next Action
 
