@@ -20,6 +20,8 @@ else
   cd "$REPO_DIR"
 fi
 
+systemctl --user restart cmcb-oracle-worker.service 2>/dev/null || true
+
 COMMIT="$(git rev-parse --short HEAD)"
 VALIDATION_PATH="$REPORT_DIR/ORACLE_VM_ENVIRONMENT_VALIDATION.json"
 python3 13_SCRIPTS/validate_environment.py
