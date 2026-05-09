@@ -56,6 +56,9 @@ Package date: 2026-05-07
   - Public `status.json` returned HTTP 200.
   - Public surface is the sanitized operating handoff folder only.
   - Public handoff page now reflects the live operating phase and current roadmap snapshot.
+- ChatGPT check-in procedure: PASS
+  - `CHATGPT_CHECKIN_PROCEDURE.md` added as the decision order for checking the handoff.
+  - `MONITORING_AND_ESCALATION.md` added as the interruption list.
 - Laptop public onboarding: PASS
   - `laptop_onboarding.ps1` PowerShell parser validation passed.
   - Public onboarding script returned HTTP 200.

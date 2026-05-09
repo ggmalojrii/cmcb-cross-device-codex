@@ -92,5 +92,16 @@
     "Tailscale offline on any live node.",
     "Public handoff out of sync with the live state.",
     "Any change requiring approval, cost, secrets, or admin installs."
-  ]
+  ],
+  "checkin_procedure": {
+    "doc": "CHATGPT_CHECKIN_PROCEDURE.md",
+    "order": [
+      "status.json",
+      "index.html",
+      "ROADMAP_STATUS.md",
+      "OPERATOR_NEXT_STEPS.md",
+      "MONITORING_AND_ESCALATION.md"
+    ],
+    "decision_rule": "If live state matches and workers are passing, stay local. If a watch signal fires or approval is needed, stop and tell the user."
+  }
 }

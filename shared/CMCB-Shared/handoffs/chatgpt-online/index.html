@@ -81,6 +81,8 @@
     <li><a href="laptop_node_bootstrap.zip"><code>laptop_node_bootstrap.zip</code></a></li>
     <li><a href="laptop_onboarding.ps1"><code>laptop_onboarding.ps1</code></a></li>
     <li><a href="idevice_control.html"><code>idevice_control.html</code></a></li>
+    <li><a href="CHATGPT_CHECKIN_PROCEDURE.md"><code>CHATGPT_CHECKIN_PROCEDURE.md</code></a></li>
+    <li><a href="MONITORING_AND_ESCALATION.md"><code>MONITORING_AND_ESCALATION.md</code></a></li>
     <li><code>OPERATOR_NEXT_STEPS.md</code></li>
     <li><code>ROADMAP_STATUS.md</code></li>
     <li><code>LOCAL_AVM_DEPLOYMENT_PLAN.md</code></li>
@@ -114,6 +116,15 @@ powershell -ExecutionPolicy Bypass -File $p</code></pre>
     <li>Add mirrored storage on any other machine that needs it.</li>
     <li>Open the iDevice control page if you want review-only access on mobile.</li>
     <li>Stop the public tunnel when no one needs external review.</li>
+  </ol>
+
+  <h2>How ChatGPT Checks In</h2>
+  <ol>
+    <li>Read <code>status.json</code> first.</li>
+    <li>Compare it with <code>ROADMAP_STATUS.md</code> and <code>OPERATOR_NEXT_STEPS.md</code>.</li>
+    <li>If the live state matches, keep the automated workers moving and avoid paging you.</li>
+    <li>If a watch signal fires, stop the affected automation and tell you what changed.</li>
+    <li>If something needs approval, cost, secrets, or admin installs, stop and ask you.</li>
   </ol>
 
   <h2>Watch For This</h2>

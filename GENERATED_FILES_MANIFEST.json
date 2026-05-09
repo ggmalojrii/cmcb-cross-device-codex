@@ -133,6 +133,16 @@
       "purpose": "Sanitized mobile review/control page for iPhone and iPad."
     },
     {
+      "path": "CHATGPT_CHECKIN_PROCEDURE.md",
+      "type": "procedure",
+      "purpose": "ChatGPT check-in flow for deciding whether to continue locally or alert the user."
+    },
+    {
+      "path": "MONITORING_AND_ESCALATION.md",
+      "type": "monitoring",
+      "purpose": "Quick list of signals that should interrupt the normal automation loop."
+    },
+    {
       "path": "shared/CMCB-Shared/test_requests/laptop/test_88fd27fe96.json",
       "type": "test-request",
       "purpose": "Queued laptop file inventory smoke test."
