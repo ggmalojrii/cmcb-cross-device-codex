@@ -5,9 +5,19 @@
     {
       "node_id": "cloud_vm",
       "role": "VM_ORCHESTRATOR",
-      "status": "blocked_pending_cloud_provider_budget_credentials",
-      "os": "Ubuntu 24.04 LTS planned",
-      "shared_root": "~/cmcb-work/shared/CMCB-Shared"
+      "status": "running",
+      "os": "Ubuntu 24.04 LTS",
+      "tailscale_name": "cmcb-oracle-free-worker",
+      "tailscale_ipv4": "100.98.49.26",
+      "shared_root": "~/cmcb-work/shared/CMCB-Shared",
+      "repo_clone": "~/cmcb-work/projects/cmcb-cross-device-codex",
+      "capabilities": [
+        "codex",
+        "gradle_build",
+        "server_test",
+        "artifact_packaging",
+        "test_request_orchestration"
+      ]
     },
     {
       "node_id": "local_avm",

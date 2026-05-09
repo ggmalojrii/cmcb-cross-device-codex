@@ -4,8 +4,9 @@
     {
       "node_id": "cloud_vm",
       "role": "VM_ORCHESTRATOR",
-      "status": "planned",
-      "tailscale_name": "",
+      "status": "running",
+      "tailscale_name": "cmcb-oracle-free-worker",
+      "tailscale_ipv4": "100.98.49.26",
       "os": "Ubuntu 24.04 LTS recommended",
       "capabilities": [
         "codex",
@@ -14,7 +15,8 @@
         "artifact_packaging",
         "test_request_orchestration"
       ],
-      "shared_root": "~/cmcb-work/shared/CMCB-Shared"
+      "shared_root": "~/cmcb-work/shared/CMCB-Shared",
+      "repo_clone": "~/cmcb-work/projects/cmcb-cross-device-codex"
     },
     {
       "node_id": "desktop",
