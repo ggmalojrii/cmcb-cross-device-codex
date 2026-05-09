@@ -193,6 +193,11 @@
       "purpose": "Windows launcher for refreshing the Oracle VM worker."
     },
     {
+      "path": "13_SCRIPTS/oracle_worker_agent.py",
+      "type": "cloud-worker-agent",
+      "purpose": "Packet agent for low-risk Oracle VM repo and environment tasks."
+    },
+    {
       "path": "19_GENERATED_DEPLOYMENT/scripts/connect_oracle_vm.ps1",
       "type": "operator-helper",
       "purpose": "Convenience SSH helper for the Oracle VM using the live status packet."

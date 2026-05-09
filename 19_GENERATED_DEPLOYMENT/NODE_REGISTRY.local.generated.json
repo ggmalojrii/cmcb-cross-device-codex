@@ -16,7 +16,10 @@
         "gradle_build",
         "server_test",
         "artifact_packaging",
-        "test_request_orchestration"
+        "test_request_orchestration",
+        "repo_refresh",
+        "environment_validation",
+        "git_status"
       ]
     },
     {

@@ -50,3 +50,9 @@ Codex can be instructed to install programs/apps with admin privileges only thro
 - Windows launcher: `19_GENERATED_DEPLOYMENT/scripts/update_oracle_worker.ps1`
 - VM refresh script: `19_GENERATED_DEPLOYMENT/scripts/sync_oracle_worker.sh`
 - The refresh loop pulls the latest repo state and runs `13_SCRIPTS/validate_environment.py` on the Oracle worker.
+
+## Cloud worker packets
+
+- `13_SCRIPTS/oracle_worker_agent.py` handles `cloud_vm` packet requests.
+- `13_SCRIPTS/vm_orchestrator.py` can now create `cloud_vm` requests and collect cloud results.
+- `19_GENERATED_DEPLOYMENT/scripts/create_cmcb_tree.sh` now creates `cloud_vm` request/result folders.

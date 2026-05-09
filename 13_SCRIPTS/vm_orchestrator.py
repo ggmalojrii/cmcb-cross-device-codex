@@ -25,15 +25,15 @@ def write_json(path, obj):
 def create_test(args):
     shared = Path(args.shared_root)
     target = args.target.lower()
-    if target not in {"desktop", "laptop"}:
-        raise SystemExit("target must be desktop or laptop")
+    if target not in {"cloud_vm", "desktop", "laptop"}:
+        raise SystemExit("target must be cloud_vm, desktop, or laptop")
     test_id = "test_" + uuid.uuid4().hex[:10]
     packet = {
         "packet_type": "CMCB_TEST_REQUEST",
         "schema_version": "1.0",
         "test_id": test_id,
         "source_actor": "CODEX_VM",
-        "target_actor": f"{target.upper()}_TEST_NODE",
+        "target_actor": "VM_ORCHESTRATOR" if target == "cloud_vm" else f"{target.upper()}_TEST_NODE",
         "project": args.project,
         "artifact": args.artifact,
         "artifact_sha256": sha256_file(args.artifact),
@@ -54,7 +54,7 @@ def create_test(args):
 def collect_results(args):
     shared = Path(args.shared_root)
     results = []
-    for node in ["desktop", "laptop"]:
+    for node in ["cloud_vm", "desktop", "laptop"]:
         folder = shared / "test_results" / node
         for p in folder.glob("*.json"):
             try:
