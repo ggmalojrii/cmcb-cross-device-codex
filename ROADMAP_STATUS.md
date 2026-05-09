@@ -35,6 +35,9 @@ Still intentional:
 - Desktop `file_inventory` and `artifact_presence` packets pass.
 - Laptop `file_inventory` and `artifact_presence` packets pass.
 - Oracle `repo_refresh`, `repo_status`, `repo_validate`, `workspace_inventory`, `terraform_validate`, `terraform_fmt_check`, `git_log`, and subtree inventory packets pass.
+- Latest Oracle live batch also passed:
+  - `test_cloud_vm_repo_status4`
+  - `test_cloud_vm_workspace_inventory7`
 - Packet schema drift was resolved.
 - Generated report cleanup left the Oracle clone clean after validation.
 

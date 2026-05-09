@@ -40,7 +40,17 @@
     "public_ipv4": "192.9.157.198",
     "private_ipv4": "10.0.0.59",
     "repo_clone": "~/cmcb-work/projects/cmcb-cross-device-codex",
-    "current_role": "repo_validation_and_worker_packets"
+    "current_role": "repo_validation_and_worker_packets",
+    "latest_batch": [
+      {
+        "test_id": "test_cloud_vm_repo_status4",
+        "result": "PASS"
+      },
+      {
+        "test_id": "test_cloud_vm_workspace_inventory7",
+        "result": "PASS"
+      }
+    ]
   },
   "local_avm": {
     "status": "running_bootstrapped_tailnet_enrolled",

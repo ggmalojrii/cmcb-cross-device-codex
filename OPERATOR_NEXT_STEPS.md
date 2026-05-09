@@ -26,6 +26,7 @@ We are no longer in setup mode. The live state is:
 2. Keep the laptop and desktop smoke checks pointed at `V:\CMCB-Central\CMCB-Shared`.
 3. Refresh the public handoff if the live state changes.
 4. Stop the public tunnel when nobody needs external review.
+5. The latest Oracle batch (`repo_status4` + `workspace_inventory7`) already passed, so the next batch can target a richer repo task.
 
 ## Live Endpoints and Paths
 
