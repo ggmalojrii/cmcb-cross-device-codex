@@ -21,6 +21,11 @@ if (-not (Get-Command ssh.exe -ErrorAction SilentlyContinue)) {
 $RemoteCommand = @"
 set -euo pipefail
 cd "`$HOME/cmcb-work/projects/cmcb-cross-device-codex"
+rm -f \
+  shared/CMCB-Shared/test_requests/cloud_vm/*.json \
+  shared/CMCB-Shared/test_results/cloud_vm/*.json \
+  shared/CMCB-Shared/logs/cloud_vm_*.txt \
+  2>/dev/null || true
 bash 19_GENERATED_DEPLOYMENT/scripts/sync_oracle_worker.sh
 "@
 
