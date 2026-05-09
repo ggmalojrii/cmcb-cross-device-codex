@@ -14,7 +14,7 @@ Generated: 2026-05-08
 | Local aVM worker | Done | WSL2 Ubuntu 24.04 is bootstrapped, validated, and enrolled in Tailscale as `cmcb-local-avm` / `100.95.38.105`. |
 | Cloud VM worker | Live on Oracle Always Free | Oracle VM is provisioned, bootstrapped, and enrolled in Tailscale as `cmcb-oracle-free-worker` / `100.98.49.26`. |
 | iPhone/iPad control | Ready for review | iDevice plan and mobile handoff page are generated. |
-| End-to-end cross-device validation | In progress | Core worker nodes are live; final paired-storage and job-routing smoke coverage remains. |
+| End-to-end cross-device validation | In progress | Core worker nodes are live; desktop and laptop file inventory smoke tests now PASS; final paired-storage and job-routing smoke coverage remains. |
 
 ## Active services
 
@@ -35,7 +35,8 @@ Generated: 2026-05-08
 2. Open `idevice_control.html` from an iPhone/iPad for mobile review.
 3. Use the local aVM or Oracle VM for free worker tasks; both are now live.
 4. Give the Oracle worker concrete repo jobs, then collect the results in `V:\CMCB-Central\CMCB-Shared`.
-5. Stop the public tunnel when onboarding is complete.
+5. Desktop and laptop can now process `file_inventory` packets against the central shared root.
+6. Stop the public tunnel when onboarding is complete.
 
 ## Operator commands
 

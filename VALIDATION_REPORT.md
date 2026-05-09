@@ -84,6 +84,8 @@ Package date: 2026-05-07
   - Desktop packet probe `test_v_central_probe`: PASS.
   - Public handoff `status.json` reports `V:\CMCB-Central\CMCB-Shared`: PASS.
   - Local aVM readback of V: central probe packet: PASS.
+  - Desktop `file_inventory` smoke packet `test_v_central_desktop_file_inventory`: PASS.
+  - Laptop `file_inventory` smoke packet `test_v_central_laptop_file_inventory`: PASS.
 - Oracle VM worker: PASS
   - Oracle VM provisioned on Always Free path.
   - VM `cmcb-oracle-free-worker` enrolled in Tailscale with IPv4 `100.98.49.26`.
