@@ -40,7 +40,15 @@ def run_cmd(cmd: list[str], cwd: Path | None = None) -> tuple[int, str]:
 
 
 def load_packet(packet_path: Path) -> dict:
-    return json.loads(packet_path.read_text(encoding="utf-8"))
+    try:
+        return json.loads(packet_path.read_text(encoding="utf-8"))
+    except UnicodeDecodeError:
+        return json.loads(packet_path.read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError as exc:
+        text = packet_path.read_text(encoding="utf-8-sig")
+        if text and text[0] == "\ufeff":
+            text = text.lstrip("\ufeff")
+        return json.loads(text)
 
 
 def handle_request(packet_path: Path, node_id: str, shared: Path, repo_dir: Path) -> dict:
