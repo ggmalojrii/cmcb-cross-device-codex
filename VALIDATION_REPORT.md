@@ -105,6 +105,7 @@ Package date: 2026-05-07
   - Windows SSH helper `connect_oracle_vm.ps1` now writes its local/shared reports with BOM-free UTF-8 encoding.
   - Cloud VM repo status on refreshed head `test_cloud_vm_repo_status2`: PASS.
   - Cloud VM repo refresh on refreshed head `test_cloud_vm_repo_refresh1`: PASS.
+  - Cloud VM workspace inventory packet `test_cloud_vm_workspace_inventory1`: PASS.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS
