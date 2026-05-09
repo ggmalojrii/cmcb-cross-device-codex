@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-05-08T04:07:52.589694+00:00",
+  "results": [
+    {
+      "node": "desktop",
+      "path": "C:\\Users\\marti\\Documents\\Codex\\2026-05-07\\files-mentioned-by-the-user-cmcb-2\\CMCB-v18.27-cross-device-vm-codex-environment-setup\\shared\\CMCB-Shared\\test_results\\desktop\\test_4de6ff474e.json",
+      "result": "PASS",
+      "test_id": "test_4de6ff474e",
+      "summary": "Inventory complete: 3 files."
+    },
+    {
+      "node": "desktop",
+      "path": "C:\\Users\\marti\\Documents\\Codex\\2026-05-07\\files-mentioned-by-the-user-cmcb-2\\CMCB-v18.27-cross-device-vm-codex-environment-setup\\shared\\CMCB-Shared\\test_results\\desktop\\test_4e9afc4cbd.json",
+      "result": "PASS",
+      "test_id": "test_4e9afc4cbd",
+      "summary": "Artifact exists: C:\\Users\\marti\\Documents\\Codex\\2026-05-07\\files-mentioned-by-the-user-cmcb-2\\CMCB-v18.27-cross-device-vm-codex-environment-setup\\shared\\CMCB-Shared\\artifacts\\background_agent_smoke.txt"
+    }
+  ]
+}

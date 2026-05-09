@@ -1,0 +1,31 @@
+# CMCB-v18.27-cross-device-vm-codex-environment-setup
+
+Date: 2026-05-07
+
+## Purpose
+
+Set up a cross-device Codex worker environment.
+
+- Cloud VM runs Codex as the main worker/orchestrator.
+- Desktop/laptop act as optional local test nodes.
+- iPhone/iPad act as control/review clients.
+- Tailscale/private networking connects devices.
+- Git handles source.
+- Syncthing/rclone/shared folders handle logs/artifacts.
+- CMCB v18.26 handles Codex↔ChatGPT state.
+- v18.27 adds VM↔desktop/laptop test request/result packets and admin-install guardrails.
+
+## Important admin-install boundary
+
+Codex can be instructed to install programs/apps with admin privileges only through explicit, user-approved manifests and elevation prompts. It should never silently bypass UAC/sudo, install unknown software, ignore checksums, or store credentials in packets/logs.
+
+## Main entrypoints
+
+- `00_START_HERE/START_HERE.md`
+- `AGENTS.md`
+- `04_CLOUD_VM/CLOUD_VM_SETUP.md`
+- `05_WINDOWS_DESKTOP_LAPTOP/WINDOWS_TEST_NODE_SETUP.md`
+- `11_ADMIN_INSTALLS/ADMIN_PRIVILEGE_INSTALL_PROTOCOL.md`
+- `13_SCRIPTS/vm_orchestrator.py`
+- `13_SCRIPTS/local_test_agent.py`
+- `13_SCRIPTS/admin_install_manager.py`

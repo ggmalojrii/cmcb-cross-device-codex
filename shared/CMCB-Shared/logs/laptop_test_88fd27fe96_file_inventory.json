@@ -1,0 +1,9 @@
+{
+  "node": "laptop",
+  "files": [
+    "logs\\WINDOWS_TEST_NODE_SETUP_REPORT.json",
+    "logs\\WINDOWS_TEST_NODE_VALIDATION_REPORT.json",
+    "test_requests\\laptop\\test_88fd27fe96.json"
+  ],
+  "count": 3
+}

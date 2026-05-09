@@ -1,0 +1,60 @@
+{
+  "packet_type": "CMCB_CHATGPT_HANDOFF_STATUS",
+  "schema_version": "1.0",
+  "generated_at": "2026-05-08",
+  "public_safety_scope": {
+    "secrets_included": false,
+    "private_keys_included": false,
+    "cloud_tokens_included": false,
+    "filesystem_access_exposed": false,
+    "public_surface": "sanitized static handoff page only"
+  },
+  "desktop_node": {
+    "hostname": "M-1232",
+    "role": "DESKTOP_TEST_NODE",
+    "status": "ready_agent_running",
+    "tailscale_ipv4": "100.86.254.125",
+    "tailscale_dns": "m-1232.tail62c74a.ts.net",
+    "syncthing_folder": "cmcb-shared"
+  },
+  "laptop_node": {
+    "status": "agent_running_against_central_shared_root",
+    "bootstrap_zip": "laptop_node_bootstrap.zip",
+    "onboarding_script": "laptop_onboarding.ps1",
+    "checkin_endpoint": "/api/laptop-checkin",
+    "latest_checkin_endpoint": "/api/latest-checkin",
+    "pending_smoke_test_id": "test_88fd27fe96",
+    "bootstrap_zip_sha256": "dd3177d19b1bb7eed3f69bd451d3fee88b45531a694fa9e9d283503280731b59",
+    "bootstrap_zip_size_bytes": 24440,
+    "latest_result": {
+      "test_id": "test_v_central_laptop_agent",
+      "result": "PASS",
+      "artifact": "V:\\CMCB-Central\\CMCB-Shared\\logs\\laptop_test_v_central_laptop_agent_file_inventory.json"
+    }
+  },
+  "cloud_vm": {
+    "status": "planned_oracle_always_free_mirror"
+  },
+  "local_avm": {
+    "status": "ready_bootstrapped_tailnet_enrolled",
+    "tailscale_hostname": "cmcb-local-avm",
+    "tailscale_ipv4": "100.95.38.105",
+    "work_root": "/home/omnico/cmcb-work",
+    "shared_root": "/home/omnico/cmcb-work/shared/CMCB-Shared",
+    "plan": "LOCAL_AVM_DEPLOYMENT_PLAN.md",
+    "setup_script": "19_GENERATED_DEPLOYMENT/scripts/setup_local_avm_wsl.ps1",
+    "last_setup_report": "reports/LOCAL_AVM_WSL_SETUP_REPORT.json",
+    "implementation_report": "LOCAL_AVM_IMPLEMENTATION_REPORT.md"
+  },
+  "idevices": {
+    "status": "control_plan_ready",
+    "review_page": "idevice_control.html",
+    "private_network": "Tailscale",
+    "ssh_policy": "tailnet_only_after_vm_or_avm_exists"
+  },
+  "next_actions": [
+    "Pair another machine to V:\\CMCB-Central\\CMCB-Shared if you want mirrored storage.",
+    "Use the local aVM for free/local Codex worker tasks.",
+    "If you want cloud capacity without paying, use the Oracle Always Free plan and keep public ports closed."
+  ]
+}

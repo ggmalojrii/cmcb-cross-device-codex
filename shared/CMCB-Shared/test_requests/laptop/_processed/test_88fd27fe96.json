@@ -1,0 +1,28 @@
+{
+  "packet_type": "CMCB_TEST_REQUEST",
+  "schema_version": "1.0",
+  "test_id": "test_88fd27fe96",
+  "source_actor": "CODEX_VM",
+  "target_actor": "LAPTOP_TEST_NODE",
+  "project": "local-laptop-bootstrap",
+  "artifact": "",
+  "artifact_sha256": "",
+  "test_type": "file_inventory",
+  "steps": [],
+  "expected_outputs": [
+    "CMCB_TEST_RESULT"
+  ],
+  "risk_level": "LOW",
+  "requires_user_approval": false,
+  "timeout_minutes": 5,
+  "allowed_commands": [],
+  "stop_conditions": [
+    "admin_prompt",
+    "credential_prompt",
+    "destructive_action",
+    "unknown_download",
+    "timeout",
+    "manual_review_required"
+  ],
+  "created_at": "2026-05-08T08:12:11.982037+00:00"
+}

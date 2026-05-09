@@ -1,0 +1,28 @@
+{
+  "packet_type": "CMCB_TEST_REQUEST",
+  "schema_version": "1.0",
+  "test_id": "test_4e9afc4cbd",
+  "source_actor": "CODEX_VM",
+  "target_actor": "DESKTOP_TEST_NODE",
+  "project": "local-desktop-background-agent",
+  "artifact": "C:\\Users\\marti\\Documents\\Codex\\2026-05-07\\files-mentioned-by-the-user-cmcb-2\\CMCB-v18.27-cross-device-vm-codex-environment-setup\\shared\\CMCB-Shared\\artifacts\\background_agent_smoke.txt",
+  "artifact_sha256": "8a8f7d3f888b23eaeb3a17654f3cf0cdca91ebba61cfcfb36e05869c614f5280",
+  "test_type": "artifact_presence",
+  "steps": [],
+  "expected_outputs": [
+    "CMCB_TEST_RESULT"
+  ],
+  "risk_level": "LOW",
+  "requires_user_approval": false,
+  "timeout_minutes": 5,
+  "allowed_commands": [],
+  "stop_conditions": [
+    "admin_prompt",
+    "credential_prompt",
+    "destructive_action",
+    "unknown_download",
+    "timeout",
+    "manual_review_required"
+  ],
+  "created_at": "2026-05-08T04:07:38.491930+00:00"
+}

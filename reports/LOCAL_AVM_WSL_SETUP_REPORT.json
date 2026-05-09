@@ -1,0 +1,19 @@
+﻿{
+    "allow_apt_install":  false,
+    "packet_type":  "CMCB_LOCAL_AVM_WSL_SETUP_REPORT",
+    "next_action":  "Run again with -AllowAptInstall after approving Ubuntu package installs.",
+    "work_root":  "~/cmcb-work",
+    "schema_version":  "1.0",
+    "generated_at":  "2026-05-08T02:05:40.8477266-07:00",
+    "result":  "PASS",
+    "allow_admin_install":  false,
+    "steps":  [
+                  "WSL command is available.",
+                  "wsl -l -v succeeded.",
+                  "Ubuntu-24.04 can run bash commands.",
+                  "Bootstrap exit code: 0"
+              ],
+    "bootstrap_output_tail":  "CMCB VM bootstrap starting.\nWork root: /home/omnico/cmcb-work\nPackage install skipped. Set CMCB_APPROVE_APT_INSTALL=1 only after approval.\nCMCB tree ready at /home/omnico/cmcb-work/shared/CMCB-Shared\nSSH_PUBLIC_KEY is not set. No key was added.\nDo not place private keys in this package or shared folders.\nTailscale install check complete. Enrollment blocked until CMCB_APPROVE_TAILSCALE_UP=1.\nInteractive alternative: sudo tailscale up --ssh --hostname \"cmcb-codex-vm\"\n/mnt/c/Users/marti/Documents/Codex/2026-05-07/files-mentioned-by-the-user-cmcb-2/CMCB-v18.27-cross-device-vm-codex-environment-setup/19_GENERATED_DEPLOYMENT/scripts/setup_codex.sh: line 14: /mnt/c/Program Files/WindowsApps/OpenAI.Codex_26.506.2212.0_x64__2p2nqsd0c76g0/app/resources/codex: Permission denied\nCodex CLI already present.\n{\n  \"result\": \"INFO\",\n  \"work_root\": \"/home/omnico/cmcb-work\",\n  \"shared_root\": \"/home/omnico/cmcb-work/shared/CMCB-Shared\",\n  \"git\": true,\n  \"java\": true,\n  \"python3\": true,\n  \"node\": true,\n  \"npm\": true,\n  \"codex\": true,\n  \"tailscale\": true,\n  \"syncthing\": true,\n  \"rclone\": true,\n  \"shared_folder_exists\": true\n}\nCMCB VM bootstrap finished. Review reports before continuing.",
+    "distro_name":  "Ubuntu-24.04",
+    "package_root":  "C:\\Users\\marti\\Documents\\Codex\\2026-05-07\\files-mentioned-by-the-user-cmcb-2\\CMCB-v18.27-cross-device-vm-codex-environment-setup"
+}

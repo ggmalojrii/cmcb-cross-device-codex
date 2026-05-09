@@ -1,0 +1,25 @@
+{
+  "packet_type": "CMCB_TEST_REQUEST",
+  "schema_version": "1.0",
+  "test_id": "",
+  "source_actor": "CODEX_VM",
+  "target_actor": "DESKTOP_TEST_NODE|LAPTOP_TEST_NODE",
+  "project": "",
+  "artifact": "",
+  "artifact_sha256": "",
+  "test_type": "file_inventory|minecraft_client_launch|fabric_server|visual_check|windows_tool|performance|custom_script",
+  "steps": [],
+  "expected_outputs": [],
+  "risk_level": "LOW",
+  "requires_user_approval": false,
+  "timeout_minutes": 20,
+  "allowed_commands": [],
+  "stop_conditions": [
+    "admin_prompt",
+    "credential_prompt",
+    "destructive_action",
+    "unknown_download",
+    "timeout",
+    "manual_review_required"
+  ]
+}

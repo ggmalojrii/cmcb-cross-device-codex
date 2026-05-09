@@ -1,0 +1,11 @@
+region         = "us-west-2"
+vm_name        = "cmcb-codex-worker"
+instance_type  = "t3.xlarge"
+root_volume_gb = 200
+
+# Public key only. Do not put private keys here.
+ssh_public_key = "ssh-ed25519 REPLACE_WITH_APPROVED_PUBLIC_KEY"
+
+# Empty keeps public SSH closed. Use a narrow /32 only if temporary SSH is approved.
+allowed_ssh_cidr = []
+

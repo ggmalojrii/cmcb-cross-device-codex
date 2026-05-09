@@ -1,0 +1,15 @@
+{
+  "result": "INFO",
+  "work_root": "/home/omnico/cmcb-work",
+  "shared_root": "/home/omnico/cmcb-work/shared/CMCB-Shared",
+  "git": true,
+  "java": true,
+  "python3": true,
+  "node": true,
+  "npm": true,
+  "codex": true,
+  "tailscale": true,
+  "syncthing": true,
+  "rclone": true,
+  "shared_folder_exists": true
+}

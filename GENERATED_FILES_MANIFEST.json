@@ -1,0 +1,366 @@
+{
+  "generated_at": "2026-05-08",
+  "generator": "Codex planning pass",
+  "safety_scope": {
+    "cloud_apply_run": false,
+    "admin_installs_run": false,
+    "public_ports_opened": false,
+    "secrets_written": false,
+    "destructive_changes": false
+  },
+  "validation": {
+    "json_parse": "PASS",
+    "powershell_parser": "PASS",
+    "bash_syntax": "PASS",
+    "cloud_init_static_checks": "PASS",
+    "secret_pattern_scan": "PASS",
+    "terraform_fmt": "PASS",
+    "terraform_init_backend_false": "PASS",
+    "terraform_validate": "PASS",
+    "windows_test_node_validation": "PASS",
+    "package_validate_environment": "PASS",
+    "desktop_packet_loop": "PASS",
+    "desktop_background_agent_loop": "PASS",
+    "ssh_key_preparation": "PASS",
+    "tailscale_desktop_enrollment": "PASS",
+    "syncthing_local_private_config": "PASS",
+    "chatgpt_public_handoff_tunnel": "PASS",
+    "laptop_public_onboarding": "PASS",
+    "laptop_checkin_relay": "PASS",
+    "laptop_smoke_test_result": "test_v_central_laptop_agent:PASS",
+    "local_avm_wsl_wrapper_static": "PASS",
+    "local_avm_wsl_dry_run": "PASS_EXPECTED_BLOCKED_WSL_NOT_INSTALLED",
+    "local_avm_wsl_install_launched": "PASS",
+    "local_avm_bootstrap": "PASS",
+    "local_avm_tailnet_enrollment": "PASS",
+    "idevice_control_plan": "PASS",
+    "v_drive_central_shared_root": "PASS"
+  },
+  "files": [
+    {
+      "path": "SETUP_PLAN.md",
+      "type": "plan",
+      "purpose": "Overall cross-device setup plan and inventory."
+    },
+    {
+      "path": "CLOUD_VM_DEPLOYMENT_PLAN.md",
+      "type": "plan",
+      "purpose": "Cloud VM bootstrap and private networking plan."
+    },
+    {
+      "path": "REQUIRED_SECRETS_AND_KEYS.md",
+      "type": "security",
+      "purpose": "List of required secrets and safe handling rules."
+    },
+    {
+      "path": "COST_AND_RISK_NOTES.md",
+      "type": "risk",
+      "purpose": "Cost drivers, risks, and mitigations."
+    },
+    {
+      "path": "NEXT_APPROVAL_PROMPT.md",
+      "type": "approval",
+      "purpose": "Structured prompt for the next approved execution step."
+    },
+    {
+      "path": "LOCAL_FREE_START_REPORT.md",
+      "type": "local-status",
+      "purpose": "Local/free setup actions, installed tools, and current blocks."
+    },
+    {
+      "path": "OPERATOR_NEXT_STEPS.md",
+      "type": "operator-note",
+      "purpose": "Current service state, URLs, IDs, stop/start commands, and next human actions."
+    },
+    {
+      "path": "ROADMAP_STATUS.md",
+      "type": "roadmap-status",
+      "purpose": "Current roadmap phase status and operator commands."
+    },
+    {
+      "path": "LOCAL_AVM_DEPLOYMENT_PLAN.md",
+      "type": "plan",
+      "purpose": "Free/local WSL2 aVM deployment plan and approval gates."
+    },
+    {
+      "path": "LOCAL_AVM_IMPLEMENTATION_REPORT.md",
+      "type": "implementation-report",
+      "purpose": "Final local aVM implementation and validation report."
+    },
+    {
+      "path": "IDEVICE_CONTROL_PLAN.md",
+      "type": "plan",
+      "purpose": "iPhone/iPad review and control client setup plan."
+    },
+    {
+      "path": "V_DRIVE_CENTRALIZATION_REPORT.md",
+      "type": "implementation-report",
+      "purpose": "V: central shared drive implementation report."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/CENTRAL_DRIVE_CONFIG.json",
+      "type": "config",
+      "purpose": "Central drive root and shared-root configuration."
+    },
+    {
+      "path": "V:/CMCB-Central/CMCB-Shared",
+      "type": "central-shared-root",
+      "purpose": "Authoritative CMCB shared artifacts, logs, handoffs, and test packets."
+    },
+    {
+      "path": "shared/CMCB-Shared/handoffs/chatgpt-online/index.html",
+      "type": "public-handoff",
+      "purpose": "Sanitized public HTML status page for ChatGPT/browser review."
+    },
+    {
+      "path": "shared/CMCB-Shared/handoffs/chatgpt-online/status.json",
+      "type": "public-handoff-json",
+      "purpose": "Sanitized public machine-readable status."
+    },
+    {
+      "path": "shared/CMCB-Shared/handoffs/chatgpt-online/laptop_node_bootstrap.zip",
+      "type": "public-bootstrap-zip",
+      "purpose": "Sanitized laptop node bootstrap ZIP exposed through the handoff tunnel."
+    },
+    {
+      "path": "shared/CMCB-Shared/handoffs/chatgpt-online/laptop_onboarding.ps1",
+      "type": "public-onboarding-script",
+      "purpose": "One-command laptop onboarding script exposed through the handoff tunnel."
+    },
+    {
+      "path": "shared/CMCB-Shared/handoffs/chatgpt-online/idevice_control.html",
+      "type": "public-handoff",
+      "purpose": "Sanitized mobile review/control page for iPhone and iPad."
+    },
+    {
+      "path": "shared/CMCB-Shared/test_requests/laptop/test_88fd27fe96.json",
+      "type": "test-request",
+      "purpose": "Queued laptop file inventory smoke test."
+    },
+    {
+      "path": "GENERATED_FILES_MANIFEST.json",
+      "type": "manifest",
+      "purpose": "Inventory of generated files and validation status."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/.env.example",
+      "type": "env-template",
+      "purpose": "Placeholder-only environment variable list."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/NODE_REGISTRY.local.generated.json",
+      "type": "node-registry-overlay",
+      "purpose": "Local generated status overlay for currently prepared nodes."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/README.md",
+      "type": "terraform-doc",
+      "purpose": "Terraform usage guardrails."
+    },
+    {
+      "path": "ORACLE_ALWAYS_FREE_CLOUD_PLAN.md",
+      "type": "plan",
+      "purpose": "Free-first Oracle Always Free cloud mirror plan."
+    },
+    {
+      "path": "ORACLE_ACCOUNT_CHECKLIST.md",
+      "type": "checklist",
+      "purpose": "Non-secret Oracle account and OCI deployment pointer checklist."
+    },
+    {
+      "path": "ORACLE_VM_BOOTSTRAP_STATUS.md",
+      "type": "status",
+      "purpose": "Oracle VM bootstrap progress, local key paths, and login URL checkpoint."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/connect_oracle_vm.ps1",
+      "type": "operator-helper",
+      "purpose": "Convenience SSH helper for the Oracle VM using the live status packet."
+    },
+    {
+      "path": "V:/CMCB-Central/CMCB-Shared/logs/oracle_vm_bootstrap_status.json",
+      "type": "test-result",
+      "purpose": "Oracle VM live-state packet copied into central shared logs."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/aws/versions.tf",
+      "type": "terraform",
+      "purpose": "AWS starter template provider versions."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/aws/variables.tf",
+      "type": "terraform",
+      "purpose": "AWS starter template variables."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/aws/main.tf",
+      "type": "terraform",
+      "purpose": "AWS EC2 Ubuntu 24.04 starter VM template."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/aws/outputs.tf",
+      "type": "terraform",
+      "purpose": "AWS starter template outputs."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/aws/terraform.tfvars.example",
+      "type": "terraform-example",
+      "purpose": "Non-secret Terraform placeholder values."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/oracle/README.md",
+      "type": "terraform-doc",
+      "purpose": "Oracle free-tier Terraform template guardrails."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/oracle/versions.tf",
+      "type": "terraform",
+      "purpose": "Oracle provider version lock."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/oracle/variables.tf",
+      "type": "terraform",
+      "purpose": "Oracle VM template variables."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/oracle/main.tf",
+      "type": "terraform",
+      "purpose": "Oracle Always Free Ubuntu 24.04 VM template."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/oracle/outputs.tf",
+      "type": "terraform",
+      "purpose": "Oracle VM template outputs."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/oracle/terraform.tfvars.example",
+      "type": "terraform-example",
+      "purpose": "Oracle placeholder-only Terraform values."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/oracle/.gitignore",
+      "type": "terraform-ignore",
+      "purpose": "Ignore Oracle Terraform local cache, state, and local variable files."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/oracle/.terraform.lock.hcl",
+      "type": "terraform-lock",
+      "purpose": "Oracle provider lock file generated by terraform init."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/aws/.gitignore",
+      "type": "terraform-ignore",
+      "purpose": "Ignore Terraform local cache, state, and local variable files."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/terraform/aws/.terraform.lock.hcl",
+      "type": "terraform-lock",
+      "purpose": "Provider lock file generated by terraform init."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/cloud-init/cloud-init.yaml",
+      "type": "cloud-init",
+      "purpose": "Ubuntu 24.04 no-secrets bootstrap template."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/create_cmcb_tree.sh",
+      "type": "script",
+      "purpose": "Create VM CMCB folder structure."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/setup_ssh.sh",
+      "type": "script",
+      "purpose": "Prepare SSH authorized_keys from public key environment variable."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/setup_tailscale.sh",
+      "type": "script",
+      "purpose": "Install/check Tailscale and gated enrollment."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/setup_codex.sh",
+      "type": "script",
+      "purpose": "Gated Codex CLI install."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/bootstrap_vm.sh",
+      "type": "script",
+      "purpose": "VM bootstrap wrapper with approval gates."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/validate_vm_environment.sh",
+      "type": "script",
+      "purpose": "VM environment validation report."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/setup_local_avm_wsl.ps1",
+      "type": "script",
+      "purpose": "Approval-gated WSL2 Ubuntu local aVM setup wrapper."
+    },
+    {
+      "path": "reports/LOCAL_AVM_WSL_SETUP_REPORT.json",
+      "type": "validation",
+      "purpose": "Dry-run report for local aVM WSL setup wrapper."
+    },
+    {
+      "path": "shared/CMCB-Shared/test_results/local_avm/test_local_avm_environment.json",
+      "type": "test-result",
+      "purpose": "Local aVM environment readiness test result packet."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/setup_windows_test_node.ps1",
+      "type": "script",
+      "purpose": "Create desktop/laptop local shared folder tree."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/validate_windows_test_node.ps1",
+      "type": "script",
+      "purpose": "Validate local Windows test node readiness."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/run_local_test_agent.ps1",
+      "type": "script",
+      "purpose": "Start local test agent after approval."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/stop_local_test_agent.ps1",
+      "type": "script",
+      "purpose": "Stop a background local test agent by PID file."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/stop_chatgpt_handoff.ps1",
+      "type": "script",
+      "purpose": "Stop the public ChatGPT handoff tunnel and local handoff server."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/scripts/handoff_relay_server.py",
+      "type": "script",
+      "purpose": "Serve sanitized handoff files and accept laptop check-ins."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/admin/ADMIN_INSTALL_MANIFEST.plan.json",
+      "type": "admin-plan",
+      "purpose": "Disabled plan-only admin install manifest."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/templates/CMCB_TEST_REQUEST.allowed.schema.json",
+      "type": "packet-template",
+      "purpose": "Aligned test request schema matching local agent allowlist."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/ssh/README.md",
+      "type": "ssh-doc",
+      "purpose": "SSH setup notes and safety rules."
+    },
+    {
+      "path": "19_GENERATED_DEPLOYMENT/ssh/cmcb_codex_vm_ed25519.pub",
+      "type": "ssh-public-key",
+      "purpose": "Public key for future CMCB VM SSH access. Private key remains in the user's .ssh directory."
+    },
+    {
+      "path": "VALIDATION_REPORT.md",
+      "type": "validation",
+      "purpose": "Validation summary for generated files."
+    }
+  ]
+}

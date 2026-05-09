@@ -1,0 +1,21 @@
+{
+  "packet_type": "CMCB_LAPTOP_CHECKIN",
+  "schema_version": "1.0",
+  "received_at": "2026-05-08T09:19:57.179716+00:00",
+  "source": "public_handoff_relay",
+  "client": {
+    "remote_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.8115"
+  },
+  "payload": {
+    "node_id": "laptop",
+    "stage": "tool_present",
+    "result": "PASS",
+    "hostname": "M-1232",
+    "timestamp": "2026-05-08T02:19:57.1401876-07:00",
+    "details": {
+      "command": "syncthing",
+      "package": "Syncthing.Syncthing"
+    }
+  }
+}

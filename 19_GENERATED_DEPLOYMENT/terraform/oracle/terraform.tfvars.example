@@ -1,0 +1,23 @@
+tenancy_ocid      = ""
+user_ocid         = ""
+fingerprint       = ""
+private_key_path  = ""
+compartment_ocid  = ""
+region            = ""
+
+instance_name     = "cmcb-oracle-free-worker"
+hostname_label    = "cmcbfree"
+shape             = "VM.Standard.A1.Flex"
+ocpus             = 1
+memory_in_gbs     = 6
+boot_volume_gbs   = 50
+
+vcn_cidr_block    = "10.10.0.0/16"
+subnet_cidr_block = "10.10.10.0/24"
+network_name      = "cmcb-free-network"
+vcn_dns_label     = "cmcbfreevcn"
+subnet_dns_label  = "cmcbfree1"
+
+ssh_public_key    = ""
+image_ocid        = ""
+assign_public_ip   = true

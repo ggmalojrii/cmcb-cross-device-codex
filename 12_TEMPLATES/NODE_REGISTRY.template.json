@@ -1,0 +1,69 @@
+{
+  "registry_version": "1.0",
+  "nodes": [
+    {
+      "node_id": "cloud_vm",
+      "role": "VM_ORCHESTRATOR",
+      "status": "planned",
+      "tailscale_name": "",
+      "os": "Ubuntu 24.04 LTS recommended",
+      "capabilities": [
+        "codex",
+        "gradle_build",
+        "server_test",
+        "artifact_packaging",
+        "test_request_orchestration"
+      ],
+      "shared_root": "~/cmcb-work/shared/CMCB-Shared"
+    },
+    {
+      "node_id": "desktop",
+      "role": "DESKTOP_TEST_NODE",
+      "status": "planned",
+      "tailscale_name": "",
+      "os": "Windows recommended",
+      "capabilities": [
+        "minecraft_client_test",
+        "gpu_visual_test",
+        "windows_tool_test",
+        "local_logs"
+      ],
+      "shared_root": "F:/CMCB-Shared"
+    },
+    {
+      "node_id": "laptop",
+      "role": "LAPTOP_TEST_NODE",
+      "status": "planned",
+      "tailscale_name": "",
+      "os": "Windows recommended",
+      "capabilities": [
+        "secondary_client_test",
+        "local_launcher_test",
+        "local_logs"
+      ],
+      "shared_root": "F:/CMCB-Shared"
+    },
+    {
+      "node_id": "idevices",
+      "role": "IDEVICE_CONTROL",
+      "status": "planned",
+      "capabilities": [
+        "ssh_review",
+        "dashboard_review",
+        "approval",
+        "packet_relay"
+      ]
+    }
+  ],
+  "network": {
+    "recommended": "Tailscale",
+    "public_ports_default": "closed",
+    "ssh": "private tailnet only"
+  },
+  "sharing": {
+    "source_code": "Git",
+    "artifacts_logs": "Syncthing or rclone",
+    "cmcb_state": "CMCB v18.26 sync packets",
+    "test_coordination": "CMCB_TEST_REQUEST and CMCB_TEST_RESULT packets"
+  }
+}

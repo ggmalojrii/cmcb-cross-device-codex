@@ -1,0 +1,1 @@
+python 13_SCRIPTS/vm_orchestrator.py collect-results --shared-root ./shared/CMCB-Shared

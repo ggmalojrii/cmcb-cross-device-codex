@@ -1,0 +1,37 @@
+{
+  "name": "CMCB-v18.27-cross-device-vm-codex-environment-setup",
+  "version": "v18.27",
+  "date": "2026-05-07",
+  "role": "cross-device cloud VM Codex environment setup with local test nodes and admin-install guardrails",
+  "artifact_delivery_risk": "MEDIUM",
+  "embedded_artifacts": [
+    "02_EMBEDDED_CMCB/CMCB-v18.26-bidirectional-cmcb-sync-codex-package.zip",
+    "02_EMBEDDED_CMCB/CMCB-v18.26-bidirectional-cmcb-sync-codex-package-codex-dropin.zip",
+    "02_EMBEDDED_CMCB/CMCB-v18.26-summary.json",
+    "02_EMBEDDED_CMCB/CMCB-v18.25-speaker-origin-verification-router-superzip.zip",
+    "02_EMBEDDED_CMCB/CMCB-v18.24-codex-chatgpt-ops-sync-bridge-platform-superzip.zip"
+  ],
+  "capabilities": [
+    "cloud VM Codex worker setup",
+    "desktop/laptop local test node setup",
+    "iDevice control guide",
+    "Tailscale/private-network architecture",
+    "Git/Syncthing/rclone sharing plan",
+    "CMCB_TEST_REQUEST packets",
+    "CMCB_TEST_RESULT packets",
+    "VM orchestrator script",
+    "local test agent script",
+    "admin install manifest",
+    "Windows UAC/admin install guide",
+    "Linux sudo install guide",
+    "environment validation script"
+  ],
+  "entrypoints": [
+    "00_START_HERE/START_HERE.md",
+    "AGENTS.md",
+    "13_SCRIPTS/vm_orchestrator.py",
+    "13_SCRIPTS/local_test_agent.py",
+    "13_SCRIPTS/admin_install_manager.py",
+    "13_SCRIPTS/run_admin_install_windows.ps1"
+  ]
+}

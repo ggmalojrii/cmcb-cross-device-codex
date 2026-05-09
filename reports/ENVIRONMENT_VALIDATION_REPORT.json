@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-05-08T04:03:14.245257+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": true,
+  "git": true,
+  "java": true,
+  "node": true,
+  "npm": true,
+  "codex": true,
+  "tailscale": true,
+  "syncthing": true,
+  "shared_folder_exists": true,
+  "result": "PASS"
+}

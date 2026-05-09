@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMCB ChatGPT Handoff</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: Segoe UI, system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    body {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+    h1, h2 {
+      line-height: 1.2;
+    }
+    code {
+      font-family: Consolas, ui-monospace, monospace;
+      background: color-mix(in srgb, CanvasText 8%, transparent);
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    .status {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .item {
+      border: 1px solid color-mix(in srgb, CanvasText 18%, transparent);
+      border-radius: 6px;
+      padding: 12px;
+    }
+    .ok {
+      color: #118344;
+      font-weight: 700;
+    }
+    .hold {
+      color: #a15c00;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <h1>CMCB v18.27 ChatGPT Handoff</h1>
+  <p>This is a sanitized public handoff page for the local/free CMCB setup. It contains no credentials, private keys, cloud tokens, or filesystem access.</p>
+
+  <div class="status">
+    <div class="item"><strong>Desktop node</strong><br><span class="ok">Ready, agent running</span></div>
+    <div class="item"><strong>Tailscale</strong><br><span class="ok">Online</span>: <code>100.86.254.125</code></div>
+    <div class="item"><strong>Syncthing</strong><br><span class="ok">Running</span>, folder <code>cmcb-shared</code></div>
+    <div class="item"><strong>Laptop node</strong><br><span class="ok">Running</span> against <code>V:\CMCB-Central\CMCB-Shared</code></div>
+    <div class="item"><strong>Local aVM</strong><br><span class="ok">Ready</span>: <code>100.95.38.105</code></div>
+    <div class="item"><strong>Cloud VM</strong><br><span class="hold">Oracle Always Free planned</span></div>
+    <div class="item"><strong>Public exposure</strong><br><span class="ok">This page only</span></div>
+  </div>
+
+  <h2>Current Artifacts</h2>
+  <ul>
+    <li><a href="laptop_node_bootstrap.zip"><code>laptop_node_bootstrap.zip</code></a></li>
+    <li><a href="laptop_onboarding.ps1"><code>laptop_onboarding.ps1</code></a></li>
+    <li><a href="idevice_control.html"><code>idevice_control.html</code></a></li>
+    <li><code>OPERATOR_NEXT_STEPS.md</code></li>
+    <li><code>ROADMAP_STATUS.md</code></li>
+    <li><code>LOCAL_AVM_DEPLOYMENT_PLAN.md</code></li>
+    <li><code>LOCAL_AVM_IMPLEMENTATION_REPORT.md</code></li>
+    <li><code>LOCAL_FREE_START_REPORT.md</code></li>
+    <li><code>19_GENERATED_DEPLOYMENT/NODE_REGISTRY.local.generated.json</code></li>
+  </ul>
+  <p>Laptop bootstrap SHA256: <code>dd3177d19b1bb7eed3f69bd451d3fee88b45531a694fa9e9d283503280731b59</code></p>
+
+  <h2>Laptop One-Command Setup</h2>
+  <p>Run this in PowerShell on the laptop:</p>
+  <pre><code>Set-ExecutionPolicy -Scope Process Bypass -Force
+$u = "https://salvation-securities-makes-steps.trycloudflare.com/laptop_onboarding.ps1"
+$p = "$env:TEMP\laptop_onboarding.ps1"
+Invoke-WebRequest -UseBasicParsing $u -OutFile $p
+powershell -ExecutionPolicy Bypass -File $p</code></pre>
+  <p>The onboarding script posts sanitized progress check-ins back to this desktop. Latest check-in endpoint: <a href="/api/latest-checkin"><code>/api/latest-checkin</code></a>.</p>
+
+  <h2>Next Human Actions</h2>
+  <ol>
+    <li>Keep the laptop agent pointed at <code>V:\CMCB-Central\CMCB-Shared</code>.</li>
+    <li>Pair another machine to <code>CMCB-Shared</code> only if mirrored storage is still desired.</li>
+    <li>Use the local aVM worker at <code>100.95.38.105</code> for free/local Codex tasks.</li>
+    <li>Use the Oracle Always Free plan if you want a cloud mirror without paying.</li>
+  </ol>
+
+  <h2>Safety Boundaries</h2>
+  <p>No secrets should be pasted into this page or synced through <code>CMCB-Shared</code>. Public access is limited to this sanitized handoff surface.</p>
+
+  <p>Machine time when generated: 2026-05-08.</p>
+</body>
+</html>

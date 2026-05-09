@@ -1,0 +1,27 @@
+{
+  "packet_type": "CMCB_CENTRAL_DRIVE_CONFIG",
+  "schema_version": "1.0",
+  "generated_at": "2026-05-08T02:27:00-07:00",
+  "central_drive": "V:",
+  "central_root": "V:\\CMCB-Central",
+  "central_shared_root": "V:\\CMCB-Central\\CMCB-Shared",
+  "previous_package_shared_root": "shared\\CMCB-Shared",
+  "compatibility": {
+    "scripts_support_CMCB_SHARED_ROOT": true,
+    "package_shared_junction_created": false,
+    "package_shared_junction_note": "Junction creation was skipped after Windows denied moving the hidden Syncthing .stfolder. Live services use V: directly."
+  },
+  "services_using_central_shared_root": [
+    "desktop_local_test_agent",
+    "chatgpt_handoff_server",
+    "laptop_watcher",
+    "syncthing_folder_cmcb-shared",
+    "local_avm_shared_symlink"
+  ],
+  "safety": {
+    "destructive_delete_performed": false,
+    "cloud_resources_created": false,
+    "public_ports_changed": false,
+    "secrets_written": false
+  }
+}

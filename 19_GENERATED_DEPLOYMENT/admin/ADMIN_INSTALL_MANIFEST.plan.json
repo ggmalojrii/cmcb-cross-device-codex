@@ -1,0 +1,76 @@
+{
+  "manifest_version": "1.0",
+  "purpose": "Plan-only local desktop/laptop tool installs. All actions disabled until reviewed and approved.",
+  "global_policy": {
+    "allow_admin_actions": false,
+    "require_user_uac_approval": true,
+    "allow_silent_install": false,
+    "allow_reboot": false,
+    "allow_unknown_publisher": false,
+    "allow_missing_checksum": false,
+    "stop_on_credential_prompt": true,
+    "stop_on_reboot_required": true,
+    "log_all_actions": true,
+    "quarantine_downloads_first": true
+  },
+  "windows_installers": [
+    {
+      "id": "tailscale",
+      "enabled": false,
+      "method": "winget",
+      "package_id": "tailscale.tailscale",
+      "purpose": "Private tailnet access for desktop/laptop test node.",
+      "requires_admin": true,
+      "expected_publisher": "Tailscale Inc.",
+      "expected_sha256": "",
+      "arguments": [],
+      "post_install_validation_commands": [
+        "tailscale version"
+      ]
+    },
+    {
+      "id": "python3",
+      "enabled": false,
+      "method": "winget",
+      "package_id": "Python.Python.3.12",
+      "purpose": "Run local_test_agent.py and validation scripts.",
+      "requires_admin": true,
+      "expected_publisher": "Python Software Foundation",
+      "expected_sha256": "",
+      "arguments": [],
+      "post_install_validation_commands": [
+        "python --version"
+      ]
+    },
+    {
+      "id": "syncthing",
+      "enabled": false,
+      "method": "winget",
+      "package_id": "Syncthing.Syncthing",
+      "purpose": "Artifact/log sync option.",
+      "requires_admin": true,
+      "expected_publisher": "Syncthing",
+      "expected_sha256": "",
+      "arguments": [],
+      "post_install_validation_commands": [
+        "syncthing --version"
+      ]
+    },
+    {
+      "id": "rclone",
+      "enabled": false,
+      "method": "winget",
+      "package_id": "Rclone.Rclone",
+      "purpose": "Artifact/log sync alternative.",
+      "requires_admin": true,
+      "expected_publisher": "Rclone",
+      "expected_sha256": "",
+      "arguments": [],
+      "post_install_validation_commands": [
+        "rclone version"
+      ]
+    }
+  ],
+  "linux_installers": []
+}
+

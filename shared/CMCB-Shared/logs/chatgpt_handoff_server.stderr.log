@@ -1,0 +1,50 @@
+127.0.0.1 - - [08/May/2026 01:10:54] "GET /status.json HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:10:54] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:12:02] "GET /laptop_onboarding.ps1 HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:12:02] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:12:02] "GET /api/latest-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:13:45] "GET /status.json HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:13:45] "GET /api/latest-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:13:56] code 404, message File not found
+127.0.0.1 - - [08/May/2026 01:13:56] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/May/2026 01:13:59] code 404, message File not found
+127.0.0.1 - - [08/May/2026 01:13:59] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/May/2026 01:23:36] code 404, message File not found
+127.0.0.1 - - [08/May/2026 01:23:36] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/May/2026 01:42:58] code 404, message File not found
+127.0.0.1 - - [08/May/2026 01:42:58] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/May/2026 01:43:13] code 404, message File not found
+127.0.0.1 - - [08/May/2026 01:43:13] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/May/2026 01:44:19] code 404, message File not found
+127.0.0.1 - - [08/May/2026 01:44:19] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/May/2026 01:44:28] code 404, message File not found
+127.0.0.1 - - [08/May/2026 01:44:28] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/May/2026 01:50:32] "GET /status.json HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:50:32] "GET /status.json HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:59:51] "GET /idevice_control.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:59:52] "GET /status.json HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 01:59:52] "GET /idevice_control.html HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:09:58] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:11:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:11:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:11:46] code 404, message File not found
+127.0.0.1 - - [08/May/2026 02:11:46] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [08/May/2026 02:12:03] "GET /status.json HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:13:27] code 404, message File not found
+127.0.0.1 - - [08/May/2026 02:13:27] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [08/May/2026 02:13:29] code 404, message File not found
+127.0.0.1 - - [08/May/2026 02:13:29] "GET /robots.txt HTTP/1.1" 404 -
+127.0.0.1 - - [08/May/2026 02:19:55] "GET /laptop_onboarding.ps1 HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:55] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:56] "GET /laptop_node_bootstrap.zip HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:56] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:56] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:57] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:57] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:57] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:57] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:57] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:58] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:58] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:19:58] "POST /api/laptop-checkin HTTP/1.1" 200 -
+127.0.0.1 - - [08/May/2026 02:20:25] "GET /api/latest-checkin HTTP/1.1" 200 -

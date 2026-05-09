@@ -1,0 +1,71 @@
+{
+  "manifest_version": "1.0",
+  "global_policy": {
+    "allow_admin_actions": false,
+    "require_user_uac_approval": true,
+    "allow_silent_install": false,
+    "allow_reboot": false,
+    "allow_unknown_publisher": false,
+    "allow_missing_checksum": false,
+    "stop_on_credential_prompt": true,
+    "stop_on_reboot_required": true,
+    "log_all_actions": true,
+    "quarantine_downloads_first": true
+  },
+  "windows_installers": [
+    {
+      "id": "example_winget_git",
+      "enabled": false,
+      "method": "winget",
+      "package_id": "Git.Git",
+      "purpose": "Example Git install through winget.",
+      "requires_admin": true,
+      "expected_publisher": "Git",
+      "expected_sha256": "",
+      "arguments": [
+        "--silent"
+      ],
+      "post_install_validation_commands": [
+        "git --version"
+      ]
+    },
+    {
+      "id": "example_manual_installer",
+      "enabled": false,
+      "method": "manual_installer",
+      "url": "https://example.com/installer.exe",
+      "purpose": "Disabled example; replace before enabling.",
+      "requires_admin": true,
+      "expected_publisher": "",
+      "expected_sha256": "",
+      "arguments": [],
+      "post_install_validation_commands": []
+    }
+  ],
+  "linux_installers": [
+    {
+      "id": "ubuntu_base_tools",
+      "enabled": false,
+      "method": "apt",
+      "packages": [
+        "git",
+        "curl",
+        "unzip",
+        "zip",
+        "python3",
+        "python3-pip",
+        "nodejs",
+        "npm",
+        "openjdk-21-jdk",
+        "tmux"
+      ],
+      "requires_sudo": true,
+      "post_install_validation_commands": [
+        "git --version",
+        "java -version",
+        "node -v",
+        "npm -v"
+      ]
+    }
+  ]
+}

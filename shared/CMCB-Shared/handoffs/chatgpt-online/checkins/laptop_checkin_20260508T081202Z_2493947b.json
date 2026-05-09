@@ -1,0 +1,19 @@
+{
+  "packet_type": "CMCB_LAPTOP_CHECKIN",
+  "schema_version": "1.0",
+  "received_at": "2026-05-08T08:12:02.334645+00:00",
+  "source": "public_handoff_relay",
+  "client": {
+    "remote_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.8115"
+  },
+  "payload": {
+    "node_id": "laptop",
+    "result": "PASS",
+    "details": {
+      "source": "desktop_self_test"
+    },
+    "hostname": "M-1232",
+    "stage": "public_endpoint_self_test"
+  }
+}

@@ -1,0 +1,9 @@
+﻿{
+    "result":  "FOLDER_TREE_READY",
+    "node_id":  "desktop",
+    "shared_root":  "C:\\Users\\marti\\Documents\\Codex\\2026-05-07\\files-mentioned-by-the-user-cmcb-2\\CMCB-v18.27-cross-device-vm-codex-environment-setup\\shared\\CMCB-Shared",
+    "admin_installs_run":  false,
+    "local_agent_started":  false,
+    "next_step":  "Run validate_windows_test_node.ps1, then run_local_test_agent.ps1 only when approved.",
+    "timestamp":  "2026-05-07T20:51:47.5542430-07:00"
+}

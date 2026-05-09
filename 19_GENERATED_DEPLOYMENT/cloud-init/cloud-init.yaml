@@ -1,0 +1,51 @@
+#cloud-config
+package_update: true
+package_upgrade: false
+
+packages:
+  - ca-certificates
+  - curl
+  - git
+  - unzip
+  - zip
+  - python3
+  - python3-pip
+  - nodejs
+  - npm
+  - openjdk-21-jdk
+  - tmux
+
+write_files:
+  - path: /opt/cmcb/README-FIRST.txt
+    permissions: "0644"
+    content: |
+      CMCB Codex worker VM bootstrap completed base cloud-init steps.
+
+      Next approved steps:
+      1. Enroll Tailscale using an environment-provided auth key or interactive login.
+      2. Verify tailnet SSH.
+      3. Close any temporary public SSH ingress.
+      4. Clone approved Git repos into ~/cmcb-work/projects.
+      5. Run environment validation.
+
+  - path: /opt/cmcb/create_cmcb_tree.sh
+    permissions: "0755"
+    content: |
+      #!/usr/bin/env bash
+      set -euo pipefail
+      BASE="${1:-/home/ubuntu/cmcb-work}"
+      SHARED="$BASE/shared/CMCB-Shared"
+      mkdir -p "$BASE/projects"
+      mkdir -p "$SHARED/test_requests/desktop" "$SHARED/test_requests/laptop"
+      mkdir -p "$SHARED/test_results/desktop" "$SHARED/test_results/laptop"
+      mkdir -p "$SHARED/artifacts" "$SHARED/logs" "$SHARED/screenshots" "$SHARED/handoffs" "$SHARED/cmcb_sync"
+      mkdir -p "$SHARED/admin_install_requests" "$SHARED/admin_install_results"
+      chown -R ubuntu:ubuntu "$BASE" || true
+
+runcmd:
+  - [bash, -lc, "mkdir -p /opt/cmcb /home/ubuntu/cmcb-work"]
+  - [bash, -lc, "/opt/cmcb/create_cmcb_tree.sh /home/ubuntu/cmcb-work"]
+  - [bash, -lc, "if ! command -v tailscale >/dev/null 2>&1; then curl -fsSL https://tailscale.com/install.sh | sh; fi"]
+  - [bash, -lc, "if command -v npm >/dev/null 2>&1 && ! command -v codex >/dev/null 2>&1; then npm install -g @openai/codex || echo 'Codex CLI install skipped or failed; run approved setup_codex.sh later.'; fi"]
+  - [bash, -lc, "echo 'CMCB cloud-init complete. Tailscale is installed but not enrolled by this no-secrets template.' > /etc/motd"]
+

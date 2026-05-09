@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: cmcb-shared
+created: 2026-05-08T00:54:38-07:00

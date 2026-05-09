@@ -1,0 +1,88 @@
+{
+  "registry_version": "1.0-local-generated",
+  "generated_at": "2026-05-08",
+  "nodes": [
+    {
+      "node_id": "cloud_vm",
+      "role": "VM_ORCHESTRATOR",
+      "status": "blocked_pending_cloud_provider_budget_credentials",
+      "os": "Ubuntu 24.04 LTS planned",
+      "shared_root": "~/cmcb-work/shared/CMCB-Shared"
+    },
+    {
+      "node_id": "local_avm",
+      "role": "VM_ORCHESTRATOR_LOCAL_AVM",
+      "status": "local_ready_bootstrapped_tailnet_enrolled",
+      "os": "Ubuntu 24.04 LTS via WSL2",
+      "host": "desktop_windows",
+      "linux_user": "omnico",
+      "tailscale_name": "cmcb-local-avm",
+      "tailscale_ipv4": "100.95.38.105",
+      "shared_root": "~/cmcb-work/shared/CMCB-Shared",
+      "shared_root_mapping": "symlink_to_/mnt/v/CMCB-Central/CMCB-Shared",
+      "capabilities": [
+        "codex",
+        "gradle_build",
+        "server_test",
+        "artifact_packaging",
+        "test_request_orchestration"
+      ],
+      "approval_gates": {
+        "wsl_install": "completed_with_user_approval",
+        "apt_installs": "completed_with_user_approval",
+        "tailscale_enrollment": "completed_interactive_login_no_auth_key_stored",
+        "codex_install": "completed_native_linux_install_auth_not_stored"
+      }
+    },
+    {
+      "node_id": "desktop",
+      "role": "DESKTOP_TEST_NODE",
+      "status": "local_ready_agent_running",
+      "os": "Windows",
+      "tailscale_name": "m-1232.tail62c74a.ts.net",
+      "tailscale_ipv4": "100.86.254.125",
+      "shared_root": "V:\\CMCB-Central\\CMCB-Shared",
+      "local_agent": {
+        "running": true,
+        "pid_file": "V:\\CMCB-Central\\CMCB-Shared\\logs\\desktop_agent.pid",
+        "stdout_log": "V:\\CMCB-Central\\CMCB-Shared\\logs\\desktop_agent.stdout.log",
+        "stderr_log": "V:\\CMCB-Central\\CMCB-Shared\\logs\\desktop_agent.stderr.log"
+      },
+      "validation": {
+        "windows_test_node": "PASS",
+        "packet_loop_once": "PASS",
+        "packet_loop_background": "PASS"
+      }
+    },
+    {
+      "node_id": "laptop",
+      "role": "LAPTOP_TEST_NODE",
+      "status": "agent_running_against_central_shared_root_smoke_test_passed",
+      "shared_root": "V:\\CMCB-Central\\CMCB-Shared"
+    },
+    {
+      "node_id": "idevices",
+      "role": "IDEVICE_CONTROL",
+      "status": "pending_tailscale_login_and_client_setup"
+    }
+  ],
+  "installed_local_tools": {
+    "python": "3.12.10",
+    "node": "24.15.0",
+    "npm": "11.12.1",
+    "git": "2.54.0.windows.1",
+    "java": "21.0.10",
+    "tailscale": "1.96.3_logged_in_100.86.254.125",
+    "syncthing": "2.0.16",
+    "rclone": "1.74.0",
+    "terraform": "1.15.1",
+    "codex": "present"
+  },
+  "remaining_blocks": [
+    "Laptop full Syncthing pairing or rclone remote configuration",
+    "Cloud provider selection",
+    "VM size and monthly budget",
+    "Cloud credentials",
+    "Terraform apply approval"
+  ]
+}

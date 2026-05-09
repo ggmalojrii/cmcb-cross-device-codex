@@ -1,0 +1,1 @@
+python 13_SCRIPTS/admin_install_manager.py plan

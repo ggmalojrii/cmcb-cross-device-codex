@@ -1,0 +1,20 @@
+{
+  "packet_type": "CMCB_LAPTOP_CHECKIN",
+  "schema_version": "1.0",
+  "received_at": "2026-05-08T09:19:56.473411+00:00",
+  "source": "public_handoff_relay",
+  "client": {
+    "remote_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.8115"
+  },
+  "payload": {
+    "node_id": "laptop",
+    "stage": "sha256_verified",
+    "result": "PASS",
+    "hostname": "M-1232",
+    "timestamp": "2026-05-08T02:19:56.4328626-07:00",
+    "details": {
+      "sha256": "dd3177d19b1bb7eed3f69bd451d3fee88b45531a694fa9e9d283503280731b59"
+    }
+  }
+}

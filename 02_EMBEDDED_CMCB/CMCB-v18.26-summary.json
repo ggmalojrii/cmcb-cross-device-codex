@@ -1,0 +1,20 @@
+{
+  "output_zip": "CMCB-v18.26-bidirectional-cmcb-sync-codex-package.zip",
+  "codex_dropin_zip": "CMCB-v18.26-bidirectional-cmcb-sync-codex-package-codex-dropin.zip",
+  "version": "v18.26",
+  "date": "2026-05-07",
+  "size_bytes": 28553119,
+  "dropin_size_bytes": 14299,
+  "sha256": "6bdbe08d06c6baaaf42a1fdb2f87fc2e65b26dc3fb96e0114ee5ad2456abfb44",
+  "dropin_sha256": "9aa0d5b023dc4f9461d93e8d19bebe703c81d0feda391fb6310dac1e657d6250",
+  "validation_result": "PASS",
+  "zip_errors": [],
+  "embedded_artifacts": [
+    "02_EMBEDDED_CMCB/CMCB-v18.25-speaker-origin-verification-router-superzip.zip",
+    "02_EMBEDDED_CMCB/CMCB-v18.25-summary.json",
+    "02_EMBEDDED_CMCB/CMCB-v18.24-codex-chatgpt-ops-sync-bridge-platform-superzip.zip",
+    "02_EMBEDDED_CMCB/CMCB-v18.24-summary.json"
+  ],
+  "artifact_delivery_risk": "MEDIUM",
+  "recovery_packet": "13_RECOVERY/RECOVERY_PACKET.md"
+}
