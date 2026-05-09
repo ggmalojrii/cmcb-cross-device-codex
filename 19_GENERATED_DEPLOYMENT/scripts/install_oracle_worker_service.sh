@@ -9,6 +9,7 @@ SERVICE_DST="$SERVICE_DIR/cmcb-oracle-worker.service"
 
 mkdir -p "$SERVICE_DIR"
 cp "$SERVICE_SRC" "$SERVICE_DST"
+chmod +x "$REPO_DIR/19_GENERATED_DEPLOYMENT/scripts/run_oracle_worker_agent.sh"
 
 systemctl --user daemon-reload
 systemctl --user enable --now cmcb-oracle-worker.service
