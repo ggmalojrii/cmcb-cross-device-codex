@@ -116,6 +116,15 @@ powershell -ExecutionPolicy Bypass -File $p</code></pre>
     <li>Stop the public tunnel when no one needs external review.</li>
   </ol>
 
+  <h2>Watch For This</h2>
+  <ul>
+    <li>Oracle worker packet failures, stalls, or permission issues.</li>
+    <li>Desktop or laptop smoke checks that stop passing.</li>
+    <li>Tailscale dropping off on any live node.</li>
+    <li>The public handoff drifting away from the live state.</li>
+    <li>Anything that needs approval, costs money, or touches secrets/admin installs.</li>
+  </ul>
+
   <h2>Safety Boundaries</h2>
   <p>No secrets should be pasted into this page or synced through <code>CMCB-Shared</code>. Public access is limited to this sanitized handoff surface.</p>
 

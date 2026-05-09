@@ -85,5 +85,12 @@
     "Use the local aVM for free/local Codex worker tasks.",
     "Keep the public handoff current with the live state.",
     "Keep public ports closed and use Tailscale for private access."
+  ],
+  "watch_signals": [
+    "Oracle worker packet failure, stall, or permission issue.",
+    "Desktop or laptop smoke test failure.",
+    "Tailscale offline on any live node.",
+    "Public handoff out of sync with the live state.",
+    "Any change requiring approval, cost, secrets, or admin installs."
   ]
 }

@@ -19,6 +19,7 @@ We are no longer in setup mode. The live state is:
 3. Keeping the desktop and laptop pointed at the shared root.
 4. Keeping the local aVM available as the free fallback worker.
 5. Keeping the Oracle mirror healthy and free.
+6. Surfacing failure signals clearly so you only step in when something actually needs attention.
 
 ## What Happens Next
 
@@ -27,6 +28,7 @@ We are no longer in setup mode. The live state is:
 3. Refresh the public handoff if the live state changes.
 4. Stop the public tunnel when nobody needs external review.
 5. The latest Oracle batch (`repo_status5` + `workspace_inventory8`) already passed, so the next batch can target a richer repo task.
+6. Keep `MONITORING_AND_ESCALATION.md` handy for the signals that should interrupt the normal loop.
 
 ## Live Endpoints and Paths
 

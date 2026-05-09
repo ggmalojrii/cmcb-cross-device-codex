@@ -55,6 +55,7 @@ Still intentional:
 2. Add mirrored storage on any additional machine that should participate in the shared root.
 3. Open the iDevice control page for review-only access if needed.
 4. Stop the public tunnel once it is no longer needed for onboarding or review.
+5. Use `MONITORING_AND_ESCALATION.md` as the quick list for what should interrupt the normal loop.
 
 ## Operator Commands
 
