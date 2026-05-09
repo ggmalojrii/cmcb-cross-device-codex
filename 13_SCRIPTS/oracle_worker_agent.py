@@ -186,22 +186,27 @@ def handle_request(packet_path: Path, node_id: str, shared: Path, repo_dir: Path
             result["result"] = "FAIL"
             result["blocked_only_by"].append(f"Terraform target missing: {terraform_target}")
         else:
-            init_code, init_out = run_cmd(["terraform", "init", "-backend=false"], cwd=terraform_dir)
+            terraform_bin = shutil.which("terraform")
+            if not terraform_bin:
+                candidate = Path.home() / "bin" / "terraform"
+                terraform_bin = str(candidate) if candidate.exists() else "terraform"
+
+            init_code, init_out = run_cmd([terraform_bin, "init", "-backend=false"], cwd=terraform_dir)
             init_path = shared / "logs" / f"{node_id}_{test_id}_terraform_init.txt"
             init_path.write_text(init_out + "\n", encoding="utf-8")
             result["logs"].append(str(init_path))
             if init_code != 0:
                 result["result"] = "FAIL"
                 result["blocked_only_by"].append("terraform init -backend=false failed")
-                result["validation"].append({"command": "terraform init -backend=false", "exit_code": init_code})
+                result["validation"].append({"command": f"{terraform_bin} init -backend=false", "exit_code": init_code})
             else:
-                validate_code, validate_out = run_cmd(["terraform", "validate"], cwd=terraform_dir)
+                validate_code, validate_out = run_cmd([terraform_bin, "validate"], cwd=terraform_dir)
                 validate_path = shared / "logs" / f"{node_id}_{test_id}_terraform_validate.txt"
                 validate_path.write_text(validate_out + "\n", encoding="utf-8")
                 result["logs"].append(str(validate_path))
                 result["artifacts"].extend([str(init_path), str(validate_path)])
-                result["validation"].append({"command": "terraform init -backend=false", "exit_code": init_code})
-                result["validation"].append({"command": "terraform validate", "exit_code": validate_code})
+                result["validation"].append({"command": f"{terraform_bin} init -backend=false", "exit_code": init_code})
+                result["validation"].append({"command": f"{terraform_bin} validate", "exit_code": validate_code})
                 result["result"] = "PASS" if validate_code == 0 else "FAIL"
                 result["summary"] = f"Terraform validation complete for {terraform_target}."
     elif test_type == "repo_status":
