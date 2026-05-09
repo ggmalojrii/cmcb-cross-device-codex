@@ -16,6 +16,7 @@ ALLOWED_TEST_TYPES = {
     "repo_validate",
     "workspace_inventory",
     "terraform_validate",
+    "terraform_fmt_check",
     "git_log",
 }
 
@@ -209,6 +210,26 @@ def handle_request(packet_path: Path, node_id: str, shared: Path, repo_dir: Path
                 result["validation"].append({"command": f"{terraform_bin} validate", "exit_code": validate_code})
                 result["result"] = "PASS" if validate_code == 0 else "FAIL"
                 result["summary"] = f"Terraform validation complete for {terraform_target}."
+    elif test_type == "terraform_fmt_check":
+        terraform_target = req.get("terraform_target", "oracle")
+        terraform_dir = repo_dir / "19_GENERATED_DEPLOYMENT" / "terraform" / terraform_target
+        if not terraform_dir.exists():
+            result["result"] = "FAIL"
+            result["blocked_only_by"].append(f"Terraform target missing: {terraform_target}")
+        else:
+            terraform_bin = shutil.which("terraform")
+            if not terraform_bin:
+                candidate = Path.home() / "bin" / "terraform"
+                terraform_bin = str(candidate) if candidate.exists() else "terraform"
+
+            fmt_code, fmt_out = run_cmd([terraform_bin, "fmt", "-check", "-diff"], cwd=terraform_dir)
+            fmt_path = shared / "logs" / f"{node_id}_{test_id}_terraform_fmt_check.txt"
+            fmt_path.write_text(fmt_out + "\n", encoding="utf-8")
+            result["logs"].append(str(fmt_path))
+            result["artifacts"].append(str(fmt_path))
+            result["validation"].append({"command": f"{terraform_bin} fmt -check -diff", "exit_code": fmt_code})
+            result["result"] = "PASS" if fmt_code == 0 else "FAIL"
+            result["summary"] = f"Terraform fmt check complete for {terraform_target}."
     elif test_type == "repo_status":
         code, out = run_cmd(["git", "status", "--short"], cwd=repo_dir)
         out_path = shared / "logs" / f"{node_id}_{test_id}_git_status.txt"
