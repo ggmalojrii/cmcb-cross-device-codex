@@ -59,6 +59,8 @@ Package date: 2026-05-07
 - ChatGPT check-in procedure: PASS
   - `CHATGPT_CHECKIN_PROCEDURE.md` added as the decision order for checking the handoff.
   - `MONITORING_AND_ESCALATION.md` added as the interruption list.
+- ChatGPT accommodation drop-in: PASS
+  - `CHATGPT_ACCOMMODATION_DROPIN.md` added as a compact handoff summary for another ChatGPT session.
 - Housekeeping console: PASS
   - `HOUSEKEEPING_CONSOLE.md` added as the request/approval guide for safe file management.
   - `housekeeping.html` added as the live console for request packet generation.

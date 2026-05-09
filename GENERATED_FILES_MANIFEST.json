@@ -173,6 +173,11 @@
       "purpose": "Quick list of signals that should interrupt the normal automation loop."
     },
     {
+      "path": "CHATGPT_ACCOMMODATION_DROPIN.md",
+      "type": "handoff",
+      "purpose": "Compact drop-in summary of the accommodation README refactor for another ChatGPT session."
+    },
+    {
       "path": "shared/CMCB-Shared/test_requests/laptop/test_88fd27fe96.json",
       "type": "test-request",
       "purpose": "Queued laptop file inventory smoke test."
