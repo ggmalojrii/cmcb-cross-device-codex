@@ -19,6 +19,7 @@ This is the short answer to: how do problems get your attention?
 4. The public handoff no longer matches the live state.
 5. A change needs approval, cost, secrets, or admin installs.
 6. A housekeeping request gets stuck in pending or approved without a result packet.
+7. The control plane install drifts from the plan or tries to open a public port.
 
 ## First Place To Look
 
@@ -28,6 +29,7 @@ This is the short answer to: how do problems get your attention?
 - `shared/CMCB-Shared/handoffs/chatgpt-online/status.json`
 - `shared/CMCB-Shared/handoffs/chatgpt-online/index.html`
 - `shared/CMCB-Shared/handoffs/chatgpt-online/housekeeping.html`
+- `shared/CMCB-Shared/handoffs/chatgpt-online/LIVE_CONTROL_PLANE_PLAN.md`
 
 ## What I Do When Something Breaks
 
@@ -36,6 +38,7 @@ This is the short answer to: how do problems get your attention?
 - Update the handoff so the issue is visible.
 - Tell you exactly what needs your attention.
 - Move or re-stage housekeeping packets when a request is blocked by path safety or approval gates.
+- Keep the control plane private to Tailscale and pause it if a public-port plan appears.
 
 ## Your Rule Of Thumb
 

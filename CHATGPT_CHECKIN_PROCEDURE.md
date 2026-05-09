@@ -13,6 +13,7 @@ This is the procedure ChatGPT should follow before deciding whether to do more w
 5. Read `MONITORING_AND_ESCALATION.md` if any signal looks off.
 6. Read `CHATGPT_PROMPT_BUNDLE.md` if you need to package the state into a prompt/zip for another model.
 7. Read `HOUSEKEEPING_CONSOLE.md` if you need to request or review file-management work.
+8. Read `LIVE_CONTROL_PLANE_PLAN.md` before any browser panel or SSH-gateway install.
 
 ## Decision Rule
 
@@ -29,6 +30,7 @@ This is the procedure ChatGPT should follow before deciding whether to do more w
 - Whether you need to do anything or whether the machines can keep going.
 - If a prompt/zip bundle is needed, include the current live state plus the exact files from `CHATGPT_PROMPT_BUNDLE.md`.
 - If file work is needed, stage it as a housekeeping request packet and keep destructive work approval-gated.
+- If browser admin access is needed, follow `LIVE_CONTROL_PLANE_PLAN.md` and keep it tailnet-only.
 
 ## How This Saves Limits
 

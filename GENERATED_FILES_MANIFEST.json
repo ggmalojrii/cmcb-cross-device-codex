@@ -143,6 +143,11 @@
       "purpose": "Public housekeeping request and approval guide."
     },
     {
+      "path": "shared/CMCB-Shared/handoffs/chatgpt-online/LIVE_CONTROL_PLANE_PLAN.md",
+      "type": "public-handoff",
+      "purpose": "Public control plane plan for Cockpit, Cockpit Files, and Tailscale SSH."
+    },
+    {
       "path": "CHATGPT_CHECKIN_PROCEDURE.md",
       "type": "procedure",
       "purpose": "ChatGPT check-in flow for deciding whether to continue locally or alert the user."
@@ -151,6 +156,11 @@
       "path": "HOUSEKEEPING_CONSOLE.md",
       "type": "housekeeping-doc",
       "purpose": "Request and approval guide for safe file management."
+    },
+    {
+      "path": "LIVE_CONTROL_PLANE_PLAN.md",
+      "type": "plan",
+      "purpose": "Research-backed plan for a Cockpit-based control panel with Tailscale SSH."
     },
     {
       "path": "MONITORING_AND_ESCALATION.md",

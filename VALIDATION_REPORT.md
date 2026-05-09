@@ -63,6 +63,8 @@ Package date: 2026-05-07
   - `HOUSEKEEPING_CONSOLE.md` added as the request/approval guide for safe file management.
   - `housekeeping.html` added as the live console for request packet generation.
   - `housekeeping_agent.py` added as the approval-gated queue processor for safe add/edit/delete work.
+- Live control plane plan: PASS
+  - `LIVE_CONTROL_PLANE_PLAN.md` added as the research-backed recommendation for Cockpit, Cockpit Files, and Tailscale SSH.
 - Laptop public onboarding: PASS
   - `laptop_onboarding.ps1` PowerShell parser validation passed.
   - Public onboarding script returned HTTP 200.

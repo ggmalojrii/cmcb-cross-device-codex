@@ -15,3 +15,5 @@ Use `index.html` for human review and `status.json` for machine-readable status.
 For laptop setup, download `laptop_onboarding.ps1` and run it in PowerShell if you need to reinstall or recheck onboarding.
 
 For safe file-management work, open `housekeeping.html` and build a request packet instead of using a raw terminal.
+
+For browser-based Linux administration, read `LIVE_CONTROL_PLANE_PLAN.md` first. It points at Cockpit, Cockpit Files, and Tailscale SSH as the low-maintenance stack.

@@ -86,6 +86,17 @@
     "destructive_ops": "approval_required",
     "terminal": "command_packet_preview_only"
   },
+  "control_plane": {
+    "status": "planned_and_accessible",
+    "plan_doc": "LIVE_CONTROL_PLANE_PLAN.md",
+    "panel": "Cockpit",
+    "file_manager": "Cockpit Files",
+    "remote_ssh": "Tailscale SSH",
+    "recommended_targets": [
+      "Oracle Always Free VM",
+      "local aVM"
+    ]
+  },
   "roadmap_snapshot": {
     "phase": "operating",
     "summary": "Desktop, laptop, local aVM, and Oracle VM are live; the work now is repo tasks, smoke checks, and keeping the handoff current.",
@@ -94,6 +105,7 @@
       "Keep the desktop and laptop pointed at V:\\CMCB-Central\\CMCB-Shared.",
       "Use the local aVM as the free fallback worker.",
       "Use the housekeeping console for approval-gated file requests.",
+      "Install the Cockpit-based control plane on the Oracle VM and local aVM.",
       "Keep the public handoff sanitized and up to date."
     ]
   },
@@ -101,6 +113,7 @@
     "Run a real repo job on the Oracle worker.",
     "Pair another machine to V:\\CMCB-Central\\CMCB-Shared if you want mirrored storage.",
     "Use housekeeping.html for safe file-management requests inside the allowed roots.",
+    "Read LIVE_CONTROL_PLANE_PLAN.md before any control-plane install work.",
     "Use the local aVM for free/local Codex worker tasks.",
     "Keep the public handoff current with the live state.",
     "Keep public ports closed and use Tailscale for private access."

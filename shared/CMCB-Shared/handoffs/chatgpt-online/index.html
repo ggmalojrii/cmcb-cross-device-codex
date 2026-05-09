@@ -88,6 +88,7 @@
     <li><a href="MONITORING_AND_ESCALATION.md"><code>MONITORING_AND_ESCALATION.md</code></a></li>
     <li><a href="housekeeping.html"><code>housekeeping.html</code></a></li>
     <li><a href="HOUSEKEEPING_CONSOLE.md"><code>HOUSEKEEPING_CONSOLE.md</code></a></li>
+    <li><a href="LIVE_CONTROL_PLANE_PLAN.md"><code>LIVE_CONTROL_PLANE_PLAN.md</code></a></li>
     <li><code>OPERATOR_NEXT_STEPS.md</code></li>
     <li><code>ROADMAP_STATUS.md</code></li>
     <li><code>LOCAL_AVM_DEPLOYMENT_PLAN.md</code></li>
@@ -114,6 +115,7 @@ powershell -ExecutionPolicy Bypass -File $p</code></pre>
     <li>Keeping the desktop and laptop smoke checks pointed at the central shared root.</li>
     <li>Keeping the local aVM available as the free fallback worker.</li>
     <li>Building the housekeeping console so safe file edits can be requested and applied in a queue.</li>
+    <li>Preparing a Cockpit-based live control plane with Tailscale SSH so the agent can manage Linux nodes through the browser or tailnet.</li>
   </ol>
 
   <h2>What Comes Next</h2>
@@ -121,6 +123,7 @@ powershell -ExecutionPolicy Bypass -File $p</code></pre>
     <li>Run a focused repo task on the Oracle worker.</li>
     <li>Add mirrored storage on any other machine that needs it.</li>
     <li>Use the housekeeping console to stage file additions, edits, deletes, and renames without a raw terminal.</li>
+    <li>Install the Cockpit-based control plane on the Oracle VM and local aVM so the agent can manage files, logs, services, and shell access from the browser.</li>
     <li>Open the iDevice control page if you want review-only access on mobile.</li>
     <li>Stop the public tunnel when no one needs external review.</li>
   </ol>
@@ -141,12 +144,17 @@ powershell -ExecutionPolicy Bypass -File $p</code></pre>
     <li>Tailscale dropping off on any live node.</li>
     <li>The public handoff drifting away from the live state.</li>
     <li>Housekeeping requests that get stuck in pending or approved without a result packet.</li>
+    <li>The control plane plan exists but the node has not yet been installed or exposed on the tailnet.</li>
     <li>Anything that needs approval, costs money, or touches secrets/admin installs.</li>
   </ul>
 
   <h2>Housekeeping Console</h2>
   <p>The housekeeping console is the safe file-management surface. It builds request packets for add, edit, delete, move, rename, and list operations inside the allowed CMCB roots. Destructive changes stay approval-gated and secret-like paths are blocked.</p>
   <p><a href="housekeeping.html">Open the housekeeping console</a> or read <a href="HOUSEKEEPING_CONSOLE.md"><code>HOUSEKEEPING_CONSOLE.md</code></a> for the queue flow and safety rules.</p>
+
+  <h2>Control Plane</h2>
+  <p>The live control plane plan points at Cockpit for the web admin surface, Cockpit Files for browser file management, and Tailscale SSH for real remote shell access without opening public ports.</p>
+  <p><a href="LIVE_CONTROL_PLANE_PLAN.md">Read the live control plane plan</a> for the install order and safety rules.</p>
 
   <h2>Safety Boundaries</h2>
   <p>No secrets should be pasted into this page or synced through <code>CMCB-Shared</code>. Public access is limited to this sanitized handoff surface.</p>

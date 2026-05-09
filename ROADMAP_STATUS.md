@@ -49,6 +49,7 @@ Still intentional:
 4. Keep the local aVM available as the free fallback worker.
 5. Keep the Oracle Always Free mirror healthy without introducing paid cloud usage.
 6. Use the housekeeping console for request-driven file edits instead of raw terminal work on the public page.
+7. Install the Cockpit-based control plane on the Oracle VM and local aVM.
 
 ## What Is Next
 
@@ -56,8 +57,9 @@ Still intentional:
 2. Add mirrored storage on any additional machine that should participate in the shared root.
 3. Open the iDevice control page for review-only access if needed.
 4. Stage the first housekeeping request packet if you want the agent to fix docs or files for you.
-5. Stop the public tunnel once it is no longer needed for onboarding or review.
-6. Use `MONITORING_AND_ESCALATION.md` as the quick list for what should interrupt the normal loop.
+5. Read `LIVE_CONTROL_PLANE_PLAN.md` before any control-plane install work.
+6. Stop the public tunnel once it is no longer needed for onboarding or review.
+7. Use `MONITORING_AND_ESCALATION.md` as the quick list for what should interrupt the normal loop.
 
 ## Operator Commands
 
