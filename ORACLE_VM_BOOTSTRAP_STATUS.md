@@ -65,6 +65,7 @@ Generated: 2026-05-09
 - Tailscale login URL was used: `https://login.tailscale.com/a/f3fdd0b01b3da`
 - The VM can ping the local aVM and desktop over tailnet.
 - The GitHub repo `https://github.com/ggmalojrii/cmcb-cross-device-codex` is cloned at `~/cmcb-work/projects/cmcb-cross-device-codex`.
+- Repo-native environment validation passed via `python3 13_SCRIPTS/validate_environment.py`.
 
 ## Next Action
 

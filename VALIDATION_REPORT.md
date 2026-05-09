@@ -92,6 +92,7 @@ Package date: 2026-05-07
   - Oracle VM bootstrap status packet copied into `V:\CMCB-Central\CMCB-Shared\logs\oracle_vm_bootstrap_status.json`.
   - Windows SSH helper `19_GENERATED_DEPLOYMENT/scripts/connect_oracle_vm.ps1` added for quick VM access.
   - Windows SSH helper PowerShell parse validation: PASS.
+  - Oracle VM repo-native environment validation: PASS.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS
