@@ -14,6 +14,7 @@ ALLOWED_TEST_TYPES = {
     "repo_status",
     "repo_refresh",
     "repo_validate",
+    "workspace_inventory",
     "git_log",
 }
 
@@ -113,6 +114,35 @@ def handle_request(packet_path: Path, node_id: str, shared: Path, repo_dir: Path
             result["validation"].append({"command": "python3 13_SCRIPTS/validate_environment.py", "exit_code": code})
             result["result"] = "PASS" if code == 0 else "FAIL"
             result["summary"] = "Repository validation complete."
+    elif test_type == "workspace_inventory":
+        top_level = []
+        for entry in sorted(repo_dir.iterdir(), key=lambda p: p.name.lower()):
+            if entry.name == ".git":
+                continue
+            item = {"name": entry.name, "kind": "dir" if entry.is_dir() else "file"}
+            if entry.is_file():
+                try:
+                    item["size_bytes"] = entry.stat().st_size
+                except OSError:
+                    item["size_bytes"] = None
+            top_level.append(item)
+
+        tracked_code, tracked_out = run_cmd(["git", "ls-files"], cwd=repo_dir)
+        status_code, status_out = run_cmd(["git", "status", "--short"], cwd=repo_dir)
+        inventory = {
+            "repo_dir": str(repo_dir),
+            "top_level": top_level,
+            "tracked_files": tracked_out.splitlines() if tracked_out else [],
+            "git_status": status_out.splitlines() if status_out else [],
+        }
+        inv_path = shared / "logs" / f"{node_id}_{test_id}_workspace_inventory.json"
+        write_json(inv_path, inventory)
+        result["logs"].append(str(inv_path))
+        result["artifacts"].append(str(inv_path))
+        result["result"] = "PASS" if tracked_code == 0 and status_code == 0 else "FAIL"
+        result["summary"] = "Workspace inventory captured."
+        result["validation"].append({"command": "git ls-files", "exit_code": tracked_code})
+        result["validation"].append({"command": "git status --short", "exit_code": status_code})
     elif test_type == "repo_status":
         code, out = run_cmd(["git", "status", "--short"], cwd=repo_dir)
         out_path = shared / "logs" / f"{node_id}_{test_id}_git_status.txt"
