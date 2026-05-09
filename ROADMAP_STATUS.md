@@ -1,47 +1,67 @@
 # CMCB Cross-Device Roadmap Status
 
-Generated: 2026-05-08
+Generated: 2026-05-09
 
-## Phase status
+## Where We Are
 
-| Phase | Status | Notes |
+The CMCB environment is now in the operating phase, not the setup phase.
+
+Live today:
+- Desktop test node is running.
+- Laptop test node is running against `V:\CMCB-Central\CMCB-Shared`.
+- Local aVM is running on WSL2 Ubuntu 24.04 and is tailnet-enrolled.
+- Oracle Always Free VM is running and is tailnet-enrolled.
+- `V:\CMCB-Central\CMCB-Shared` is the central shared root for artifacts, logs, and test packets.
+
+Still intentional:
+- Cloud VM is being used as the Oracle Always Free mirror, not a paid cloud worker.
+- iPhone/iPad access is review/control only.
+
+## Timeline
+
+| Stage | Status | What happened |
 | --- | --- | --- |
-| Package inventory and planning | Done | Source package read, plans and generated templates created. |
-| Desktop/local base node | Done | Desktop agent, Syncthing, Tailscale, and validation are live. |
-| ChatGPT online handoff | Done, temporary | Public handoff tunnel is live for laptop onboarding and review. |
-| V: central shared drive | Done | `V:\CMCB-Central\CMCB-Shared` is the central artifacts/logs/test-packet root. |
-| Laptop test node | Done, running | Laptop agent is running against `V:\CMCB-Central\CMCB-Shared`; smoke test `test_88fd27fe96` returned PASS. |
-| Local aVM worker | Done | WSL2 Ubuntu 24.04 is bootstrapped, validated, and enrolled in Tailscale as `cmcb-local-avm` / `100.95.38.105`. |
-| Cloud VM worker | Live on Oracle Always Free | Oracle VM is provisioned, bootstrapped, and enrolled in Tailscale as `cmcb-oracle-free-worker` / `100.98.49.26`. |
-| iPhone/iPad control | Ready for review | iDevice plan and mobile handoff page are generated. |
-| End-to-end cross-device validation | In progress | Core worker nodes are live; desktop and laptop file inventory smoke tests now PASS; Oracle repo refresh PASS; Oracle workspace inventory PASS; mirrored platform subtree inventories PASS; schema subtree inventory PASS; Oracle clone is clean after report cleanup; Oracle Terraform validate PASS; Oracle Terraform fmt-check PASS; packet schema drift resolved; paired storage smoke now PASS; final job-routing coverage remains. |
+| 1. Inventory and planning | Done | Read the setup package, created the generated plans, templates, and validation material. |
+| 2. Desktop base node | Done | Desktop agent, Syncthing, and Tailscale came online first. |
+| 3. Shared root move | Done | `V:\CMCB-Central\CMCB-Shared` became the central drive for live artifacts. |
+| 4. Laptop onboarding | Done | Laptop agent is live and checking in against the shared root. |
+| 5. Local aVM | Done | WSL2 Ubuntu 24.04 came online as a free local worker. |
+| 6. Oracle Always Free mirror | Done | Oracle VM was provisioned, bootstrapped, and validated. |
+| 7. Worker packets | Done | Repo refresh, workspace inventory, subtree inventory, Terraform validate, and Terraform fmt-check all passed on Oracle. |
+| 8. Current operating loop | In progress | We are now using the live workers for real repo and smoke-check tasks, not just setup. |
 
-## Active services
+## What Has Been Verified
 
-- Desktop local test agent: running.
-- Syncthing: running.
-- Tailscale desktop enrollment: running.
-- ChatGPT handoff relay: running.
-- Cloudflare handoff tunnel: running.
-- Laptop watcher: running.
-- WSL/Ubuntu local aVM: running and tailnet enrolled.
-- Oracle VM: running and tailnet enrolled.
-- Central shared root: `V:\CMCB-Central\CMCB-Shared`.
-- Laptop agent: running against `V:\CMCB-Central\CMCB-Shared`.
+- Desktop `file_inventory` and `artifact_presence` packets pass.
+- Laptop `file_inventory` and `artifact_presence` packets pass.
+- Oracle `repo_refresh`, `repo_status`, `repo_validate`, `workspace_inventory`, `terraform_validate`, `terraform_fmt_check`, `git_log`, and subtree inventory packets pass.
+- Packet schema drift was resolved.
+- Generated report cleanup left the Oracle clone clean after validation.
 
-## Next moves
+## What We Are Working On Now
 
-1. If you want mirrored storage on a second machine, pair that machine to `V:\CMCB-Central\CMCB-Shared` with Syncthing or rclone.
-2. Open `idevice_control.html` from an iPhone/iPad for mobile review.
-3. Use the local aVM or Oracle VM for free worker tasks; both are now live.
-4. Give the Oracle worker concrete repo jobs, then collect the results in `V:\CMCB-Central\CMCB-Shared`.
-5. Desktop and laptop can now process `file_inventory` packets against the central shared root.
-6. Next useful smoke step: run a build/test packet on the Oracle worker or mirror a richer artifact set.
-7. Stop the public tunnel when onboarding is complete.
+1. Keep the public handoff aligned with the live state.
+2. Use the Oracle worker for real repo jobs instead of only health checks.
+3. Keep the laptop and desktop pointed at `V:\CMCB-Central\CMCB-Shared`.
+4. Keep the local aVM available as the free fallback worker.
+5. Keep the Oracle Always Free mirror healthy without introducing paid cloud usage.
 
-## Operator commands
+## What Is Next
 
-Laptop onboarding:
+1. Run a focused repo task on the Oracle worker.
+2. Add mirrored storage on any additional machine that should participate in the shared root.
+3. Open the iDevice control page for review-only access if needed.
+4. Stop the public tunnel once it is no longer needed for onboarding or review.
+
+## Operator Commands
+
+### Refresh the Oracle worker from Windows
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\19_GENERATED_DEPLOYMENT\scripts\connect_oracle_vm.ps1
+```
+
+### Laptop onboarding
 
 ```powershell
 Set-ExecutionPolicy -Scope Process Bypass -Force
@@ -51,20 +71,8 @@ Invoke-WebRequest -UseBasicParsing $u -OutFile $p
 powershell -ExecutionPolicy Bypass -File $p
 ```
 
-Local aVM readiness check:
+### Stop the public handoff
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\19_GENERATED_DEPLOYMENT\scripts\setup_local_avm_wsl.ps1
-```
-
-Local aVM WSL install approval:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\19_GENERATED_DEPLOYMENT\scripts\setup_local_avm_wsl.ps1 -AllowAdminInstall
-```
-
-Stop public handoff:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\19_GENERATED_DEPLOYMENT\scripts\stop_chatgpt_handoff.ps1 -LogsDir .\shared\CMCB-Shared\logs
+powershell -ExecutionPolicy Bypass -File .\19_GENERATED_DEPLOYMENT\scripts\stop_chatgpt_handoff.ps1 -LogsDir V:\CMCB-Central\CMCB-Shared\logs
 ```

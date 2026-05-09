@@ -47,17 +47,34 @@
 </head>
 <body>
   <h1>CMCB v18.27 ChatGPT Handoff</h1>
-  <p>This is a sanitized public handoff page for the local/free CMCB setup. It contains no credentials, private keys, cloud tokens, or filesystem access.</p>
+  <p>This is the current operating handoff for the CMCB setup. It shows what is live, what is being worked on, and what comes next. It contains no credentials, private keys, cloud tokens, or filesystem access.</p>
 
   <div class="status">
-    <div class="item"><strong>Desktop node</strong><br><span class="ok">Ready, agent running</span></div>
-    <div class="item"><strong>Tailscale</strong><br><span class="ok">Online</span>: <code>100.86.254.125</code></div>
-    <div class="item"><strong>Syncthing</strong><br><span class="ok">Running</span>, folder <code>cmcb-shared</code></div>
+    <div class="item"><strong>Desktop node</strong><br><span class="ok">Running</span>, agent live</div>
     <div class="item"><strong>Laptop node</strong><br><span class="ok">Running</span> against <code>V:\CMCB-Central\CMCB-Shared</code></div>
-    <div class="item"><strong>Local aVM</strong><br><span class="ok">Ready</span>: <code>100.95.38.105</code></div>
-    <div class="item"><strong>Cloud VM</strong><br><span class="hold">Oracle Always Free planned</span></div>
+    <div class="item"><strong>Local aVM</strong><br><span class="ok">Running</span>: <code>100.95.38.105</code></div>
+    <div class="item"><strong>Oracle VM</strong><br><span class="ok">Live</span>: <code>100.98.49.26</code></div>
+    <div class="item"><strong>Central root</strong><br><span class="ok">Active</span>: <code>V:\CMCB-Central\CMCB-Shared</code></div>
     <div class="item"><strong>Public exposure</strong><br><span class="ok">This page only</span></div>
   </div>
+
+  <h2>Where We Are</h2>
+  <ul>
+    <li>The setup phase is done.</li>
+    <li>The environment is now in the operating phase.</li>
+    <li>Desktop, laptop, local aVM, and Oracle VM are all live.</li>
+    <li>The shared root is centralized at <code>V:\CMCB-Central\CMCB-Shared</code>.</li>
+    <li>The public tunnel exists for review and onboarding, not for secrets.</li>
+  </ul>
+
+  <h2>Timeline</h2>
+  <ol>
+    <li><strong>Done:</strong> inventory, plans, generated templates, and security defaults.</li>
+    <li><strong>Done:</strong> desktop node, shared root, laptop node, local aVM, Oracle Always Free mirror.</li>
+    <li><strong>Done:</strong> Oracle repo refresh, workspace inventory, subtree inventory, Terraform validate, Terraform fmt-check.</li>
+    <li><strong>Now:</strong> keep the handoff current and use the live workers for real repo tasks.</li>
+    <li><strong>Next:</strong> run a focused repo job on the Oracle worker and keep mirrored storage aligned where needed.</li>
+  </ol>
 
   <h2>Current Artifacts</h2>
   <ul>
@@ -69,12 +86,13 @@
     <li><code>LOCAL_AVM_DEPLOYMENT_PLAN.md</code></li>
     <li><code>LOCAL_AVM_IMPLEMENTATION_REPORT.md</code></li>
     <li><code>LOCAL_FREE_START_REPORT.md</code></li>
+    <li><code>ORACLE_VM_BOOTSTRAP_STATUS.md</code></li>
     <li><code>19_GENERATED_DEPLOYMENT/NODE_REGISTRY.local.generated.json</code></li>
   </ul>
   <p>Laptop bootstrap SHA256: <code>dd3177d19b1bb7eed3f69bd451d3fee88b45531a694fa9e9d283503280731b59</code></p>
 
   <h2>Laptop One-Command Setup</h2>
-  <p>Run this in PowerShell on the laptop:</p>
+  <p>Run this in PowerShell on the laptop if you need to reinstall or recheck the onboarding flow:</p>
   <pre><code>Set-ExecutionPolicy -Scope Process Bypass -Force
 $u = "https://salvation-securities-makes-steps.trycloudflare.com/laptop_onboarding.ps1"
 $p = "$env:TEMP\laptop_onboarding.ps1"
@@ -82,17 +100,25 @@ Invoke-WebRequest -UseBasicParsing $u -OutFile $p
 powershell -ExecutionPolicy Bypass -File $p</code></pre>
   <p>The onboarding script posts sanitized progress check-ins back to this desktop. Latest check-in endpoint: <a href="/api/latest-checkin"><code>/api/latest-checkin</code></a>.</p>
 
-  <h2>Next Human Actions</h2>
+  <h2>What Is Being Worked On</h2>
   <ol>
-    <li>Keep the laptop agent pointed at <code>V:\CMCB-Central\CMCB-Shared</code>.</li>
-    <li>Pair another machine to <code>CMCB-Shared</code> only if mirrored storage is still desired.</li>
-    <li>Use the local aVM worker at <code>100.95.38.105</code> for free/local Codex tasks.</li>
-    <li>Use the Oracle Always Free plan if you want a cloud mirror without paying.</li>
+    <li>Keeping the public handoff synchronized with the live node registry.</li>
+    <li>Using the Oracle worker for real repo jobs and packet validation.</li>
+    <li>Keeping the desktop and laptop smoke checks pointed at the central shared root.</li>
+    <li>Keeping the local aVM available as the free fallback worker.</li>
+  </ol>
+
+  <h2>What Comes Next</h2>
+  <ol>
+    <li>Run a focused repo task on the Oracle worker.</li>
+    <li>Add mirrored storage on any other machine that needs it.</li>
+    <li>Open the iDevice control page if you want review-only access on mobile.</li>
+    <li>Stop the public tunnel when no one needs external review.</li>
   </ol>
 
   <h2>Safety Boundaries</h2>
   <p>No secrets should be pasted into this page or synced through <code>CMCB-Shared</code>. Public access is limited to this sanitized handoff surface.</p>
 
-  <p>Machine time when generated: 2026-05-08.</p>
+  <p>Machine time when generated: 2026-05-09.</p>
 </body>
 </html>

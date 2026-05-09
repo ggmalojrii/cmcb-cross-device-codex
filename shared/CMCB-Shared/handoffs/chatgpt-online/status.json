@@ -1,7 +1,7 @@
 {
   "packet_type": "CMCB_CHATGPT_HANDOFF_STATUS",
   "schema_version": "1.0",
-  "generated_at": "2026-05-08",
+  "generated_at": "2026-05-09",
   "public_safety_scope": {
     "secrets_included": false,
     "private_keys_included": false,
@@ -12,13 +12,14 @@
   "desktop_node": {
     "hostname": "M-1232",
     "role": "DESKTOP_TEST_NODE",
-    "status": "ready_agent_running",
+    "status": "running",
     "tailscale_ipv4": "100.86.254.125",
     "tailscale_dns": "m-1232.tail62c74a.ts.net",
-    "syncthing_folder": "cmcb-shared"
+    "syncthing_folder": "cmcb-shared",
+    "shared_root": "V:\\CMCB-Central\\CMCB-Shared"
   },
   "laptop_node": {
-    "status": "agent_running_against_central_shared_root",
+    "status": "running_against_central_shared_root",
     "bootstrap_zip": "laptop_node_bootstrap.zip",
     "onboarding_script": "laptop_onboarding.ps1",
     "checkin_endpoint": "/api/laptop-checkin",
@@ -33,10 +34,16 @@
     }
   },
   "cloud_vm": {
-    "status": "planned_oracle_always_free_mirror"
+    "status": "live_oracle_always_free_mirror",
+    "hostname": "cmcb-oracle-free-worker",
+    "tailscale_ipv4": "100.98.49.26",
+    "public_ipv4": "192.9.157.198",
+    "private_ipv4": "10.0.0.59",
+    "repo_clone": "~/cmcb-work/projects/cmcb-cross-device-codex",
+    "current_role": "repo_validation_and_worker_packets"
   },
   "local_avm": {
-    "status": "ready_bootstrapped_tailnet_enrolled",
+    "status": "running_bootstrapped_tailnet_enrolled",
     "tailscale_hostname": "cmcb-local-avm",
     "tailscale_ipv4": "100.95.38.105",
     "work_root": "/home/omnico/cmcb-work",
@@ -52,9 +59,21 @@
     "private_network": "Tailscale",
     "ssh_policy": "tailnet_only_after_vm_or_avm_exists"
   },
+  "roadmap_snapshot": {
+    "phase": "operating",
+    "summary": "Desktop, laptop, local aVM, and Oracle VM are live; the work now is repo tasks, smoke checks, and keeping the handoff current.",
+    "next": [
+      "Run a focused repo job on the Oracle worker.",
+      "Keep the desktop and laptop pointed at V:\\CMCB-Central\\CMCB-Shared.",
+      "Use the local aVM as the free fallback worker.",
+      "Keep the public handoff sanitized and up to date."
+    ]
+  },
   "next_actions": [
+    "Run a real repo job on the Oracle worker.",
     "Pair another machine to V:\\CMCB-Central\\CMCB-Shared if you want mirrored storage.",
     "Use the local aVM for free/local Codex worker tasks.",
-    "If you want cloud capacity without paying, use the Oracle Always Free plan and keep public ports closed."
+    "Keep the public handoff current with the live state.",
+    "Keep public ports closed and use Tailscale for private access."
   ]
 }
