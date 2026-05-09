@@ -94,6 +94,7 @@ Package date: 2026-05-07
   - Windows SSH helper PowerShell parse validation: PASS.
   - Oracle VM repo-native environment validation: PASS.
   - Oracle worker refresh scripts added: `sync_oracle_worker.sh` and `update_oracle_worker.ps1`.
+  - Cloud VM packet lane PASS: `test_cloud_vm_repo_status` handled by `13_SCRIPTS/oracle_worker_agent.py`.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS

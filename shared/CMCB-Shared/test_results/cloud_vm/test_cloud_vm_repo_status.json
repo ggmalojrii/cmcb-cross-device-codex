@@ -1,0 +1,25 @@
+{
+  "packet_type": "CMCB_TEST_RESULT",
+  "schema_version": "1.0",
+  "test_id": "test_cloud_vm_repo_status",
+  "source_actor": "CLOUD_VM_TEST_NODE",
+  "target_actor": "CODEX_VM",
+  "result": "PASS",
+  "logs": [
+    "/home/ubuntu/cmcb-work/projects/cmcb-cross-device-codex/shared/CMCB-Shared/logs/cloud_vm_test_cloud_vm_repo_status_git_status.txt"
+  ],
+  "artifacts": [
+    "/home/ubuntu/cmcb-work/projects/cmcb-cross-device-codex/shared/CMCB-Shared/logs/cloud_vm_test_cloud_vm_repo_status_git_status.txt"
+  ],
+  "screenshots": [],
+  "summary": "Git status captured.",
+  "blocked_only_by": [],
+  "started_at": "2026-05-09T13:16:22.969621+00:00",
+  "finished_at": "2026-05-09T13:16:23.019905+00:00",
+  "validation": [
+    {
+      "command": "git status --short",
+      "exit_code": 0
+    }
+  ]
+}

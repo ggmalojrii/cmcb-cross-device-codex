@@ -173,6 +173,16 @@
       "purpose": "Oracle VM bootstrap progress, local key paths, and login URL checkpoint."
     },
     {
+      "path": "shared/CMCB-Shared/test_requests/cloud_vm/test_cloud_vm_repo_status.json",
+      "type": "test-request",
+      "purpose": "Cloud VM repo status request packet."
+    },
+    {
+      "path": "shared/CMCB-Shared/test_results/cloud_vm/test_cloud_vm_repo_status.json",
+      "type": "test-result",
+      "purpose": "Cloud VM repo status result packet."
+    },
+    {
       "path": "repo_clone/.gitignore",
       "type": "gitignore",
       "purpose": "Repo guardrails for secrets, caches, and local tooling."
