@@ -42,6 +42,7 @@ Still intentional:
   - `test_cloud_vm_contract_validate1`
 - Packet schema drift was resolved.
 - Generated report cleanup left the Oracle clone clean after validation.
+- The Oracle worker handoff consistency audit is now queued over the contract, drop-in, prompt bundle, check-in procedure, and live handoff files.
 
 ## What We Are Working On Now
 
@@ -54,6 +55,7 @@ Still intentional:
 7. Use the Cockpit-based control plane on the Oracle VM and local aVM.
 8. The Oracle worker accommodation drift audit passed over the contract, prompt bundle, and live handoff files.
 9. The Oracle worker repo validation passed after the accommodation and handoff updates.
+10. The Oracle worker handoff consistency audit is queued over the contract, drop-in, prompt bundle, check-in procedure, and live handoff files.
 
 ## What Is Next
 
@@ -66,6 +68,7 @@ Still intentional:
 7. Use `MONITORING_AND_ESCALATION.md` as the quick list for what should interrupt the normal loop.
 8. Keep the current accommodation contract stable unless there is a real reason to re-run drift checks.
 9. Use the Oracle worker for a richer repo task next.
+10. Read the handoff consistency audit result when it lands at `V:\CMCB-Central\CMCB-Shared\test_results\cloud_vm\test_cloud_vm_handoff_consistency1.json`.
 
 ## Operator Commands
 

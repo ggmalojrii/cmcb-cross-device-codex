@@ -24,7 +24,8 @@ We are no longer in setup mode. The live state is:
 8. Reading the control plane plan and status before any Cockpit or Tailscale SSH work.
 9. Noting that the Oracle accommodation drift audit already passed.
 10. Noting that the Oracle repo validation after the accommodation updates also passed.
-11. Using the Oracle worker for a richer repo task next instead of re-running the same audit.
+11. Noting that the Oracle handoff consistency audit is now queued.
+12. Using the Oracle worker for a richer repo task next instead of re-running the same audit.
 
 ## What Happens Next
 
@@ -38,7 +39,8 @@ We are no longer in setup mode. The live state is:
 8. Keep `MONITORING_AND_ESCALATION.md` handy for the signals that should interrupt the normal loop.
 9. Keep the accommodation contract stable unless the live surface changes again.
 10. Use the Oracle worker for the next repo task instead of another drift pass.
-11. Keep the result path available for the repo validation run: `V:\CMCB-Central\CMCB-Shared\test_results\cloud_vm\test_cloud_vm_contract_validate1.json`.
+11. Check `V:\CMCB-Central\CMCB-Shared\test_results\cloud_vm\test_cloud_vm_handoff_consistency1.json` when the consistency audit returns.
+12. Keep the result path available for the repo validation run: `V:\CMCB-Central\CMCB-Shared\test_results\cloud_vm\test_cloud_vm_contract_validate1.json`.
 
 ## Live Endpoints and Paths
 

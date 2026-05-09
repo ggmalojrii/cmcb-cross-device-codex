@@ -42,13 +42,12 @@
     "repo_clone": "~/cmcb-work/projects/cmcb-cross-device-codex",
     "current_role": "repo_validation_and_worker_packets",
     "current_request": {
-      "test_id": "test_cloud_vm_contract_validate1",
-      "test_type": "repo_validate",
-      "status": "completed",
-      "purpose": "Validate the current repo head after the accommodation and handoff updates.",
-      "expected_result_path": "V:\\CMCB-Central\\CMCB-Shared\\test_results\\cloud_vm\\test_cloud_vm_contract_validate1.json",
-      "expected_logs_root": "V:\\CMCB-Central\\CMCB-Shared\\logs",
-      "result": "PASS"
+      "test_id": "test_cloud_vm_handoff_consistency1",
+      "test_type": "workspace_inventory",
+      "status": "queued",
+      "purpose": "Check the accommodation contract, drop-in, prompt bundle, check-in procedure, and live handoff for consistency.",
+      "expected_result_path": "V:\\CMCB-Central\\CMCB-Shared\\test_results\\cloud_vm\\test_cloud_vm_handoff_consistency1.json",
+      "expected_logs_root": "V:\\CMCB-Central\\CMCB-Shared\\logs"
     },
     "latest_batch": [
       {
