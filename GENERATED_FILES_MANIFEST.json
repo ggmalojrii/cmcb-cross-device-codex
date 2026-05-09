@@ -228,6 +228,11 @@
       "purpose": "Cloud VM repo status request packet."
     },
     {
+      "path": "shared/CMCB-Shared/test_requests/cloud_vm/test_cloud_vm_accommodation_drift1.json",
+      "type": "test-request",
+      "purpose": "Cloud VM accommodation drift audit packet."
+    },
+    {
       "path": "shared/CMCB-Shared/test_results/cloud_vm/test_cloud_vm_repo_status.json",
       "type": "test-result",
       "purpose": "Cloud VM repo status result packet."

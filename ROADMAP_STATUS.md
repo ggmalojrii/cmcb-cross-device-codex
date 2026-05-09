@@ -50,6 +50,7 @@ Still intentional:
 5. Keep the Oracle Always Free mirror healthy without introducing paid cloud usage.
 6. Use the housekeeping console for request-driven file edits instead of raw terminal work on the public page.
 7. Use the Cockpit-based control plane on the Oracle VM and local aVM.
+8. Let the Oracle worker run the queued accommodation drift audit over the contract, prompt bundle, and live handoff files.
 
 ## What Is Next
 
@@ -60,6 +61,7 @@ Still intentional:
 5. Read `LIVE_CONTROL_PLANE_PLAN.md` and `CONTROL_PLANE_STATUS.md` for control-plane usage details.
 6. Stop the public tunnel once it is no longer needed for onboarding or review.
 7. Use `MONITORING_AND_ESCALATION.md` as the quick list for what should interrupt the normal loop.
+8. Review the accommodation drift audit result when the Oracle worker returns it.
 
 ## Operator Commands
 

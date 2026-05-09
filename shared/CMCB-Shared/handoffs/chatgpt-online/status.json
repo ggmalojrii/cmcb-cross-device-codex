@@ -41,6 +41,12 @@
     "private_ipv4": "10.0.0.59",
     "repo_clone": "~/cmcb-work/projects/cmcb-cross-device-codex",
     "current_role": "repo_validation_and_worker_packets",
+    "current_request": {
+      "test_id": "test_cloud_vm_accommodation_drift1",
+      "test_type": "workspace_inventory",
+      "status": "queued",
+      "purpose": "Check the accommodation contract, prompt bundle, and live handoff for drift."
+    },
     "latest_batch": [
       {
         "test_id": "test_cloud_vm_repo_status5",
