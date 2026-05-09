@@ -101,6 +101,7 @@ Package date: 2026-05-07
   - Cloud VM repo validation lane now allowlists `repo_validate` for compile-plus-validation packets.
   - Cloud VM packet transport now accepts UTF-8 and UTF-8 BOM JSON from Windows-created packets.
   - Windows SSH helper `connect_oracle_vm.ps1` now writes its local/shared reports with BOM-free UTF-8 encoding.
+  - Cloud VM repo status on refreshed head `test_cloud_vm_repo_status2`: PASS.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS
