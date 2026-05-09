@@ -93,6 +93,7 @@ Package date: 2026-05-07
   - Windows SSH helper `19_GENERATED_DEPLOYMENT/scripts/connect_oracle_vm.ps1` added for quick VM access.
   - Windows SSH helper PowerShell parse validation: PASS.
   - Oracle VM repo-native environment validation: PASS.
+  - Oracle worker refresh scripts added: `sync_oracle_worker.sh` and `update_oracle_worker.ps1`.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS

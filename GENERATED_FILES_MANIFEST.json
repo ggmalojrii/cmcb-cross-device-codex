@@ -173,6 +173,26 @@
       "purpose": "Oracle VM bootstrap progress, local key paths, and login URL checkpoint."
     },
     {
+      "path": "repo_clone/.gitignore",
+      "type": "gitignore",
+      "purpose": "Repo guardrails for secrets, caches, and local tooling."
+    },
+    {
+      "path": "repo_clone/README.md",
+      "type": "readme",
+      "purpose": "Repo quickstart and live worker notes."
+    },
+    {
+      "path": "repo_clone/19_GENERATED_DEPLOYMENT/scripts/sync_oracle_worker.sh",
+      "type": "worker-sync-script",
+      "purpose": "Oracle VM repo pull plus validation loop."
+    },
+    {
+      "path": "repo_clone/19_GENERATED_DEPLOYMENT/scripts/update_oracle_worker.ps1",
+      "type": "worker-sync-launcher",
+      "purpose": "Windows launcher for refreshing the Oracle VM worker."
+    },
+    {
       "path": "19_GENERATED_DEPLOYMENT/scripts/connect_oracle_vm.ps1",
       "type": "operator-helper",
       "purpose": "Convenience SSH helper for the Oracle VM using the live status packet."

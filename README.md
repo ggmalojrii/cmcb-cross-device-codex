@@ -44,3 +44,9 @@ Codex can be instructed to install programs/apps with admin privileges only thro
 3. Push to GitHub after each meaningful checkpoint.
 4. Pull on the Oracle VM before running validation there.
 5. Keep credentials, private keys, and `.env` files local only.
+
+## Worker refresh
+
+- Windows launcher: `19_GENERATED_DEPLOYMENT/scripts/update_oracle_worker.ps1`
+- VM refresh script: `19_GENERATED_DEPLOYMENT/scripts/sync_oracle_worker.sh`
+- The refresh loop pulls the latest repo state and runs `13_SCRIPTS/validate_environment.py` on the Oracle worker.
