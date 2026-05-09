@@ -43,11 +43,11 @@
     "current_role": "repo_validation_and_worker_packets",
     "latest_batch": [
       {
-        "test_id": "test_cloud_vm_repo_status4",
+        "test_id": "test_cloud_vm_repo_status5",
         "result": "PASS"
       },
       {
-        "test_id": "test_cloud_vm_workspace_inventory7",
+        "test_id": "test_cloud_vm_workspace_inventory8",
         "result": "PASS"
       }
     ]

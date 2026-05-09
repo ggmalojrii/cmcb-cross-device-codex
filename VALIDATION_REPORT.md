@@ -116,8 +116,8 @@ Package date: 2026-05-07
   - `12_TEMPLATES/CMCB_TEST_REQUEST.schema.json` updated to match the live packet allowlist.
   - Cloud VM schema subtree inventory `test_cloud_vm_subtree_inventory5`: PASS.
   - Latest Oracle live batch:
-    - `test_cloud_vm_repo_status4`: PASS
-    - `test_cloud_vm_workspace_inventory7`: PASS
+    - `test_cloud_vm_repo_status5`: PASS
+    - `test_cloud_vm_workspace_inventory8`: PASS
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS
