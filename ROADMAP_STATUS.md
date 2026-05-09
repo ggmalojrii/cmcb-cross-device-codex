@@ -38,6 +38,8 @@ Still intentional:
 - Latest Oracle live batch also passed:
   - `test_cloud_vm_repo_status5`
   - `test_cloud_vm_workspace_inventory8`
+- Latest Oracle repo validation also passed:
+  - `test_cloud_vm_contract_validate1`
 - Packet schema drift was resolved.
 - Generated report cleanup left the Oracle clone clean after validation.
 
@@ -51,7 +53,7 @@ Still intentional:
 6. Use the housekeeping console for request-driven file edits instead of raw terminal work on the public page.
 7. Use the Cockpit-based control plane on the Oracle VM and local aVM.
 8. The Oracle worker accommodation drift audit passed over the contract, prompt bundle, and live handoff files.
-9. Only schedule another drift audit if the contract or public surface changes again.
+9. The Oracle worker repo validation passed after the accommodation and handoff updates.
 
 ## What Is Next
 

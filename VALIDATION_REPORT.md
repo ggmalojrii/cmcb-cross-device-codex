@@ -65,6 +65,8 @@ Package date: 2026-05-07
   - `CHATGPT_PROMPT_BUNDLE.md` now includes the accommodation drop-in alongside the accommodation README for future handoffs.
 - Oracle worker accommodation drift audit: queued
   - `shared/CMCB-Shared/test_requests/cloud_vm/test_cloud_vm_accommodation_drift1.json` added as the next cloud VM workspace inventory packet.
+- Oracle worker repo validation after accommodation updates: PASS
+  - `test_cloud_vm_contract_validate1` returned PASS on the live Oracle worker.
 - Housekeeping console: PASS
   - `HOUSEKEEPING_CONSOLE.md` added as the request/approval guide for safe file management.
   - `housekeeping.html` added as the live console for request packet generation.
