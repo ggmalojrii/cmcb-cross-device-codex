@@ -87,11 +87,17 @@
     "terminal": "command_packet_preview_only"
   },
   "control_plane": {
-    "status": "planned_and_accessible",
+    "status": "live_on_tailnet",
     "plan_doc": "LIVE_CONTROL_PLANE_PLAN.md",
+    "status_doc": "CONTROL_PLANE_STATUS.md",
     "panel": "Cockpit",
     "file_manager": "Cockpit Files",
     "remote_ssh": "Tailscale SSH",
+    "cockpit_urls": [
+      "https://100.98.49.26:9090",
+      "https://100.95.38.105:9090"
+    ],
+    "tailscale_ssh_enabled": true,
     "recommended_targets": [
       "Oracle Always Free VM",
       "local aVM"
@@ -105,7 +111,7 @@
       "Keep the desktop and laptop pointed at V:\\CMCB-Central\\CMCB-Shared.",
       "Use the local aVM as the free fallback worker.",
       "Use the housekeeping console for approval-gated file requests.",
-      "Install the Cockpit-based control plane on the Oracle VM and local aVM.",
+      "Use the Cockpit-based control plane on the Oracle VM and local aVM.",
       "Keep the public handoff sanitized and up to date."
     ]
   },
@@ -114,6 +120,7 @@
     "Pair another machine to V:\\CMCB-Central\\CMCB-Shared if you want mirrored storage.",
     "Use housekeeping.html for safe file-management requests inside the allowed roots.",
     "Read LIVE_CONTROL_PLANE_PLAN.md before any control-plane install work.",
+    "Use CONTROL_PLANE_STATUS.md for the current tailnet URLs and access notes.",
     "Use the local aVM for free/local Codex worker tasks.",
     "Keep the public handoff current with the live state.",
     "Keep public ports closed and use Tailscale for private access."

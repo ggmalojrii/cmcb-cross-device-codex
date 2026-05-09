@@ -30,6 +30,7 @@ This is the short answer to: how do problems get your attention?
 - `shared/CMCB-Shared/handoffs/chatgpt-online/index.html`
 - `shared/CMCB-Shared/handoffs/chatgpt-online/housekeeping.html`
 - `shared/CMCB-Shared/handoffs/chatgpt-online/LIVE_CONTROL_PLANE_PLAN.md`
+- `shared/CMCB-Shared/handoffs/chatgpt-online/CONTROL_PLANE_STATUS.md`
 
 ## What I Do When Something Breaks
 

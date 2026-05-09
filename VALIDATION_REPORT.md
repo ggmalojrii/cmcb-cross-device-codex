@@ -65,6 +65,11 @@ Package date: 2026-05-07
   - `housekeeping_agent.py` added as the approval-gated queue processor for safe add/edit/delete work.
 - Live control plane plan: PASS
   - `LIVE_CONTROL_PLANE_PLAN.md` added as the research-backed recommendation for Cockpit, Cockpit Files, and Tailscale SSH.
+- Control plane deployment: PASS
+  - Cockpit, Cockpit Files, Cockpit System, Cockpit NetworkManager, Cockpit Storaged, and Cockpit PackageKit installed on Oracle VM and local aVM.
+  - `cockpit.socket` active and listening on `9090` on both nodes.
+  - `tailscale up --ssh` executed on both nodes.
+  - Tailnet access tested with `curl -k -I` against `https://100.98.49.26:9090` and `https://100.95.38.105:9090`.
 - Laptop public onboarding: PASS
   - `laptop_onboarding.ps1` PowerShell parser validation passed.
   - Public onboarding script returned HTTP 200.

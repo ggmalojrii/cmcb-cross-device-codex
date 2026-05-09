@@ -17,3 +17,5 @@ For laptop setup, download `laptop_onboarding.ps1` and run it in PowerShell if y
 For safe file-management work, open `housekeeping.html` and build a request packet instead of using a raw terminal.
 
 For browser-based Linux administration, read `LIVE_CONTROL_PLANE_PLAN.md` first. It points at Cockpit, Cockpit Files, and Tailscale SSH as the low-maintenance stack.
+
+The current live endpoints and status are in `CONTROL_PLANE_STATUS.md`.

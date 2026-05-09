@@ -21,7 +21,7 @@ We are no longer in setup mode. The live state is:
 5. Keeping the Oracle mirror healthy and free.
 6. Surfacing failure signals clearly so you only step in when something actually needs attention.
 7. Using the housekeeping console to stage file changes safely instead of opening a raw terminal on the public site.
-8. Reading the control plane plan before any Cockpit or Tailscale SSH install.
+8. Reading the control plane plan and status before any Cockpit or Tailscale SSH work.
 
 ## What Happens Next
 
@@ -31,7 +31,7 @@ We are no longer in setup mode. The live state is:
 4. Stop the public tunnel when nobody needs external review.
 5. The latest Oracle batch (`repo_status5` + `workspace_inventory8`) already passed, so the next batch can target a richer repo task.
 6. Stage a housekeeping request packet if you want the agent to fix or tidy files for you.
-7. Read `LIVE_CONTROL_PLANE_PLAN.md` before starting the browser panel install.
+7. Read `LIVE_CONTROL_PLANE_PLAN.md` and `CONTROL_PLANE_STATUS.md` for the browser panel and tailnet SSH endpoints.
 8. Keep `MONITORING_AND_ESCALATION.md` handy for the signals that should interrupt the normal loop.
 
 ## Live Endpoints and Paths
@@ -40,6 +40,7 @@ We are no longer in setup mode. The live state is:
 - Public status JSON: `https://salvation-securities-makes-steps.trycloudflare.com/status.json`
 - Public housekeeping console: `https://salvation-securities-makes-steps.trycloudflare.com/housekeeping.html`
 - Live control plane plan: `https://salvation-securities-makes-steps.trycloudflare.com/LIVE_CONTROL_PLANE_PLAN.md`
+- Control plane status: `https://salvation-securities-makes-steps.trycloudflare.com/CONTROL_PLANE_STATUS.md`
 - Laptop onboarding script: `https://salvation-securities-makes-steps.trycloudflare.com/laptop_onboarding.ps1`
 - Laptop bootstrap ZIP: `https://salvation-securities-makes-steps.trycloudflare.com/laptop_node_bootstrap.zip`
 - Desktop local test agent PID file: `shared/CMCB-Shared/logs/desktop_agent.pid`

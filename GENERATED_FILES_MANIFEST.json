@@ -148,6 +148,11 @@
       "purpose": "Public control plane plan for Cockpit, Cockpit Files, and Tailscale SSH."
     },
     {
+      "path": "shared/CMCB-Shared/handoffs/chatgpt-online/CONTROL_PLANE_STATUS.md",
+      "type": "public-handoff",
+      "purpose": "Public control plane status for current tailnet endpoints and access notes."
+    },
+    {
       "path": "CHATGPT_CHECKIN_PROCEDURE.md",
       "type": "procedure",
       "purpose": "ChatGPT check-in flow for deciding whether to continue locally or alert the user."

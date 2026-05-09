@@ -14,6 +14,7 @@ This is the procedure ChatGPT should follow before deciding whether to do more w
 6. Read `CHATGPT_PROMPT_BUNDLE.md` if you need to package the state into a prompt/zip for another model.
 7. Read `HOUSEKEEPING_CONSOLE.md` if you need to request or review file-management work.
 8. Read `LIVE_CONTROL_PLANE_PLAN.md` before any browser panel or SSH-gateway install.
+9. Read `CONTROL_PLANE_STATUS.md` for current live panel URLs and access notes.
 
 ## Decision Rule
 
