@@ -23,6 +23,7 @@ We are no longer in setup mode. The live state is:
 7. Using the housekeeping console to stage file changes safely instead of opening a raw terminal on the public site.
 8. Reading the control plane plan and status before any Cockpit or Tailscale SSH work.
 9. Letting the Oracle worker run the queued accommodation drift audit on the contract, prompt bundle, and live handoff files.
+10. Checking `V:\CMCB-Central\CMCB-Shared\test_results\cloud_vm\test_cloud_vm_accommodation_drift1.json` for the returned audit result.
 
 ## What Happens Next
 
@@ -35,6 +36,7 @@ We are no longer in setup mode. The live state is:
 7. Read `LIVE_CONTROL_PLANE_PLAN.md` and `CONTROL_PLANE_STATUS.md` for the browser panel and tailnet SSH endpoints.
 8. Keep `MONITORING_AND_ESCALATION.md` handy for the signals that should interrupt the normal loop.
 9. Check the accommodation drift audit result once the Oracle worker returns it.
+10. Use the result path above rather than waiting on chat for the return value.
 
 ## Live Endpoints and Paths
 

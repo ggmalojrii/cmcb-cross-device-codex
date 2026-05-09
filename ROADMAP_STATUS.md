@@ -51,6 +51,7 @@ Still intentional:
 6. Use the housekeeping console for request-driven file edits instead of raw terminal work on the public page.
 7. Use the Cockpit-based control plane on the Oracle VM and local aVM.
 8. Let the Oracle worker run the queued accommodation drift audit over the contract, prompt bundle, and live handoff files.
+9. Read the drift audit result from `V:\CMCB-Central\CMCB-Shared\test_results\cloud_vm\test_cloud_vm_accommodation_drift1.json` when it lands.
 
 ## What Is Next
 
@@ -62,6 +63,7 @@ Still intentional:
 6. Stop the public tunnel once it is no longer needed for onboarding or review.
 7. Use `MONITORING_AND_ESCALATION.md` as the quick list for what should interrupt the normal loop.
 8. Review the accommodation drift audit result when the Oracle worker returns it.
+9. Keep the result path handy: `V:\CMCB-Central\CMCB-Shared\test_results\cloud_vm\test_cloud_vm_accommodation_drift1.json`.
 
 ## Operator Commands
 

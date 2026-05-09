@@ -45,7 +45,9 @@
       "test_id": "test_cloud_vm_accommodation_drift1",
       "test_type": "workspace_inventory",
       "status": "queued",
-      "purpose": "Check the accommodation contract, prompt bundle, and live handoff for drift."
+      "purpose": "Check the accommodation contract, prompt bundle, and live handoff for drift.",
+      "expected_result_path": "V:\\CMCB-Central\\CMCB-Shared\\test_results\\cloud_vm\\test_cloud_vm_accommodation_drift1.json",
+      "expected_logs_root": "V:\\CMCB-Central\\CMCB-Shared\\logs"
     },
     "latest_batch": [
       {
