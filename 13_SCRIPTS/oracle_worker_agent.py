@@ -83,6 +83,28 @@ def handle_request(packet_path: Path, node_id: str, shared: Path, repo_dir: Path
         result["result"] = "PASS" if code == 0 else "FAIL"
         result["summary"] = "Environment validation complete."
         result["validation"].append({"command": "python3 13_SCRIPTS/validate_environment.py", "exit_code": code})
+    elif test_type == "repo_validate":
+        compile_code, compile_out = run_cmd(
+            ["python3", "-m", "py_compile", "13_SCRIPTS/oracle_worker_agent.py", "13_SCRIPTS/vm_orchestrator.py"],
+            cwd=repo_dir,
+        )
+        compile_path = shared / "logs" / f"{node_id}_{test_id}_py_compile.txt"
+        compile_path.write_text(compile_out + "\n", encoding="utf-8")
+        result["logs"].append(str(compile_path))
+        if compile_code != 0:
+            result["result"] = "FAIL"
+            result["blocked_only_by"].append("python3 -m py_compile failed")
+            result["validation"].append({"command": "python3 -m py_compile 13_SCRIPTS/oracle_worker_agent.py 13_SCRIPTS/vm_orchestrator.py", "exit_code": compile_code})
+        else:
+            code, out = run_cmd(["python3", "13_SCRIPTS/validate_environment.py"], cwd=repo_dir)
+            out_path = shared / "logs" / f"{node_id}_{test_id}_environment_validation.txt"
+            out_path.write_text(out + "\n", encoding="utf-8")
+            result["logs"].append(str(out_path))
+            result["artifacts"].extend([str(compile_path), str(out_path)])
+            result["validation"].append({"command": "python3 -m py_compile 13_SCRIPTS/oracle_worker_agent.py 13_SCRIPTS/vm_orchestrator.py", "exit_code": compile_code})
+            result["validation"].append({"command": "python3 13_SCRIPTS/validate_environment.py", "exit_code": code})
+            result["result"] = "PASS" if code == 0 else "FAIL"
+            result["summary"] = "Repository validation complete."
     elif test_type == "repo_status":
         code, out = run_cmd(["git", "status", "--short"], cwd=repo_dir)
         out_path = shared / "logs" / f"{node_id}_{test_id}_git_status.txt"

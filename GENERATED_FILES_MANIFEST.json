@@ -223,6 +223,11 @@
       "purpose": "Persistent user service for the Oracle packet agent."
     },
     {
+      "path": "shared/CMCB-Shared/test_results/cloud_vm/test_cloud_vm_repo_validate.json",
+      "type": "test-result",
+      "purpose": "Cloud VM repo validation result packet."
+    },
+    {
       "path": "19_GENERATED_DEPLOYMENT/scripts/connect_oracle_vm.ps1",
       "type": "operator-helper",
       "purpose": "Convenience SSH helper for the Oracle VM using the live status packet."

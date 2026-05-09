@@ -57,3 +57,4 @@ Codex can be instructed to install programs/apps with admin privileges only thro
 - `13_SCRIPTS/vm_orchestrator.py` can now create `cloud_vm` requests and collect cloud results.
 - `19_GENERATED_DEPLOYMENT/scripts/create_cmcb_tree.sh` now creates `cloud_vm` request/result folders.
 - `19_GENERATED_DEPLOYMENT/scripts/install_oracle_worker_service.sh` installs the persistent Oracle worker service.
+- `repo_validate` runs compile checks plus environment validation on the Oracle worker.

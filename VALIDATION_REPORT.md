@@ -96,6 +96,7 @@ Package date: 2026-05-07
   - Oracle worker refresh scripts added: `sync_oracle_worker.sh` and `update_oracle_worker.ps1`.
   - Cloud VM packet lane PASS: `test_cloud_vm_repo_status` handled by `13_SCRIPTS/oracle_worker_agent.py`.
   - Oracle worker persistent service files added: `run_oracle_worker_agent.sh`, `install_oracle_worker_service.sh`, and `cmcb-oracle-worker.service`.
+  - Cloud VM repo validation lane now allowlists `repo_validate` for compile-plus-validation packets.
 - Terraform after install:
   - `terraform fmt -check`: PASS
   - `terraform init -backend=false`: PASS
